@@ -1,6 +1,6 @@
 import React from "react";
 
-const Characters = () => {
+const Characters:React.FC = () => {
   return (
     <>
       <div>Characters</div>

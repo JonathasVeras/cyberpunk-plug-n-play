@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom"
 
-const Character = () => {
+const Character:React.FC = () => {
     const { id } = useParams()
     return(
         <>
