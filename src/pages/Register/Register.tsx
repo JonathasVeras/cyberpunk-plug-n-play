@@ -9,7 +9,7 @@ const Register: React.FC = () => {
   const [password, setPassword] = useState("");
   const [passwordRepeat, setPasswordRepeat] = useState("");
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async () => {
     if (password === passwordRepeat) {
       const response: any = await registerAPI(username, password);
       console.log(response);
@@ -69,8 +69,8 @@ const Register: React.FC = () => {
             <button
               className="p-2 rounded-lg bg-yellow-500 text-white"
               type="button"
-              onClick={(e) => {
-                handleSubmit(e);
+              onClick={() => {
+                handleSubmit();
               }}
             >
               <p>Create user</p>
