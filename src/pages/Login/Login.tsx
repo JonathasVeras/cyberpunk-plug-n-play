@@ -1,25 +1,35 @@
 import React, { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginAPI } from "../../services/loginAPI";
+import axios from "axios";
+import instance from "../../api/axios";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
-    const response: any = await loginAPI(username, password);
-    if (response) {
-      localStorage.setItem(
-        "perfilAtual",
-        JSON.stringify({ nome: response.nome, id: response.id })
-      );
-      navigate("/fichasJogador");
-    } else {
-      alert("Nome ou senha incorretos. Tente novamente.");
-    }
+    instance.get('/perfis.json')
+      .then(response => {
+        const data = response.data;
+        console.log(data)
+        const perfis = Object.keys(data).map(key => ({ id: key, ...data[key] }));
+        const perfil = perfis.find(p => p.nome === username && p.senha === password);
+
+        if (perfil) {
+          localStorage.setItem('perfilAtual', JSON.stringify({ nome: perfil.nome, id: perfil.id }));
+          alert('Login bem-sucedido!');
+          navigate('/fichasJogador');
+        } else {
+          alert('Nome ou senha incorretos. Tente novamente.');
+        }
+      })
+      .catch(error => {
+        console.log('Erro ao autenticar o perfil:', error);
+        alert('Erro ao autenticar o perfil. Tente novamente.');
+      });
   };
 
   return (
@@ -40,20 +50,20 @@ const Login: React.FC = () => {
           <div className="flex flex-col space-y-4 items-center text-center">
             <div className="flex flex-col m-2">
               <label>Username</label>
-              <input
-                className="border-2 p-2 rounded-lg text-black"
-                type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+              <input 
+                className="border-2 p-2 rounded-lg text-black" 
+                type="text" 
+                value={username} 
+                onChange={(e) => setUsername(e.target.value)} 
               />
             </div>
             <div className="flex flex-col">
               <label>Password</label>
-              <input
-                className="border-2 p-2 rounded-lg text-black"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+              <input 
+                className="border-2 p-2 rounded-lg text-black" 
+                type="password" 
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)} 
               />
             </div>
           </div>
