@@ -16,7 +16,7 @@ const Login: React.FC = () => {
         "perfilAtual",
         JSON.stringify({ nome: response.nome, id: response.id })
       );
-      navigate("/fichasJogador");
+      navigate("/characters");
     } else {
       alert("Nome ou senha incorretos. Tente novamente.");
     }
