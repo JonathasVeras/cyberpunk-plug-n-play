@@ -1,4 +1,10 @@
-Try:
+* Try:
+```
 $ npm install
-And finally
+```
+
+* And finally
+```
 $ npm run dev
+```
+
