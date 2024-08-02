@@ -1,11 +1,14 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginAPI } from "../../services/loginAPI";
+import GenericModal from "../../components/GenericModal/GenericModal";
+import { clearLocalStorage } from "../../utils/utils";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [warningModal, setWarningModal] = useState(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -13,14 +16,25 @@ const Login: React.FC = () => {
     const response: any = await loginAPI(username, password);
     if (response) {
       localStorage.setItem(
-        "perfilAtual",
-        JSON.stringify({ nome: response.nome, id: response.id })
+        "recentProfile",
+        JSON.stringify({ username: response.username, id: response.id })
       );
+      localStorage.setItem("offline", JSON.stringify({ status: false }));
       navigate("/characters");
     } else {
       alert("Nome ou senha incorretos. Tente novamente.");
     }
   };
+
+  const logOffline = () => {
+    localStorage.setItem("offline", JSON.stringify({ status: true }));
+    localStorage.removeItem("recentProfile");
+    navigate("/characters");
+  };
+
+  useEffect(() => {
+    clearLocalStorage();
+  }, []);
 
   return (
     <div
@@ -41,7 +55,7 @@ const Login: React.FC = () => {
             <div className="flex flex-col m-2">
               <label>Username</label>
               <input
-                className="border-2 p-2 rounded-lg text-black"
+                className="border-2 p-2 rounded-lg text-white bg-gray-800"
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
@@ -50,7 +64,7 @@ const Login: React.FC = () => {
             <div className="flex flex-col">
               <label>Password</label>
               <input
-                className="border-2 p-2 rounded-lg text-black"
+                className="border-2 p-2 rounded-lg text-white bg-gray-800"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -65,7 +79,7 @@ const Login: React.FC = () => {
               <p>Login</p>
             </button>
             <button
-              className="p-2 rounded-lg bg-yellow-500 text-white"
+              className="p-2 rounded-lg bg-yellow-500 text-white font-semibold"
               type="button"
               onClick={() => {
                 navigate("/register");
@@ -74,8 +88,47 @@ const Login: React.FC = () => {
               <p>Register</p>
             </button>
           </div>
+          <button
+            className="p-2 rounded-lg bg-yellow-500 text-white font-semibold"
+            type="button"
+            onClick={() => {
+              setWarningModal(true);
+            }}
+          >
+            <p>Enter Anonymously</p>
+          </button>
         </form>
       </div>
+      <GenericModal isOpen={warningModal} onRequestClose={() => {}}>
+        <>
+          <div className="bg-black text-white flex flex-col space-y-4 items-center justify-center">
+            <p className="w-[200px] lg:w-[300px]">
+              When you enter anonymously, your tokens will only be saved in your
+              browser, with the ability to export or import them via JSON.
+              However, there is no option to save them in the cloud.
+            </p>
+            <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-2">
+              <button
+                className="text-white bg-yellow-500 p-2 rounded-xl"
+                onClick={() => {
+                  setWarningModal(false);
+                  logOffline();
+                }}
+              >
+                Okay
+              </button>
+              <button
+                className="text-white bg-yellow-500 p-2 rounded-xl"
+                onClick={() => {
+                  setWarningModal(false);
+                }}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </>
+      </GenericModal>
     </div>
   );
 };
