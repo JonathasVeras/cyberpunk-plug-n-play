@@ -5,7 +5,7 @@ const Characters: React.FC = () => {
     <>
       <div
         className="
-        bg-[url('../public/wallpapers/characters-list-wp.png')] 
+        bg-[url('../wallpapers/characters-list-wp.png')] 
         bg-cover bg-center bg-fixed min-h-screen
         "
       >

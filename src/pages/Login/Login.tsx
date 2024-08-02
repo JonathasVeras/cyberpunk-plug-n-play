@@ -39,7 +39,7 @@ const Login: React.FC = () => {
   return (
     <div
       className="
-      bg-[url('../public/wallpapers/login-register-wp.png')] 
+      bg-[url('../wallpapers/login-register-wp.png')] 
       bg-cover bg-center bg-fixed min-h-screen
     "
     >

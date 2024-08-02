@@ -27,7 +27,7 @@ const Register: React.FC = () => {
   return (
     <div
       className="
-    bg-[url('../public/wallpapers/register-wp.png')] 
+    bg-[url('../wallpapers/register-wp.png')] 
     bg-cover bg-center bg-fixed min-h-screen
   "
     >
