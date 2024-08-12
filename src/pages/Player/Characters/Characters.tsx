@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { useAuth } from '../../../contexts/AuthContext';
-import { ICharacterSheet } from '../../../interfaces/characterSheet';
+import React, { useEffect, useState } from "react";
+import { useAuth } from "../../../contexts/AuthContext";
+import { ICharacterSheet } from "../../../interfaces/characterSheet";
 
 // const characterSheet: ICharacterSheet = {
 //   background: "media",
@@ -48,28 +48,98 @@ import { ICharacterSheet } from '../../../interfaces/characterSheet';
 //   maxHealth: 16,
 // };
 
+interface CharacterDetails {
+  age: number;
+}
+
+interface CharacterData {
+  [key: string]: CharacterDetails;
+}
+interface SimpleCharacter {
+  name: string;
+  age: number;
+}
 
 const Characters: React.FC = () => {
-  const { isOnline, isAuthenticated } = useAuth();
+  const { isAuthenticated, isOnline } = useAuth(); // Usando o contexto para acessar a autenticação e o estado online
+  const [localSheets, setLocalSheets] = useState<ICharacterSheet[]>([]);
+  // Criando um estado separado para as informações dos cards
+  const [simpleSheets, setSimpleSheets] = useState<SimpleCharacter[]>([]);
 
   useEffect(() => {
-    // Checar se o usuário está offline ou online
-    // Tentar pegar todas as fichas LocalStorage ou online
-    if (isAuthenticated) {
-      console.log(isAuthenticated && isOnline)
-      // lógica para pegar fichas online
-    } else{
-      console.log('Are ooffline')
-      // lógica para pegar fichas offline
-    }
-  }, [isAuthenticated, isOnline]);
+    const fetchSheets = async () => {
+      console.log("Teste");
+      if (isAuthenticated && isOnline) {
+        console.log("autenticado e online");
+        try {
+          // Lógica para buscar fichas online do Firebase
+          const response = await fetch(
+            "https://cyberpunk-react-default-rtdb.firebaseio.com/fichas.json"
+          );
+          const data: CharacterData = await response.json();
+
+          // Transforme o objeto em um array
+          const sheetsArray: SimpleCharacter[] = Object.entries(data).map(
+            ([name, details]) => ({
+              name,
+              age: details.age,
+            })
+          );
+
+          setSimpleSheets(sheetsArray); // Atualiza o estado com o array de fichas
+          console.log("Sucesso no firebase");
+        } catch (error) {
+          console.error("Erro ao buscar fichas online:", error);
+        }
+      } else {
+        // Lógica para buscar fichas offline do localStorage
+        const storedSheets = localStorage.getItem("characterSheets");
+        if (storedSheets) {
+          setLocalSheets(JSON.parse(storedSheets));
+        } else {
+        }
+      }
+    };
+
+    fetchSheets(); // Executa a função para buscar as fichas
+
+    // Retorne void ou nada no useEffect
+  }, [isAuthenticated, isOnline]); // Dependências corretas para o useEffect
 
   return (
     <div className="bg-[url('../wallpapers/characters-list-wp.png')] bg-cover bg-center bg-fixed min-h-screen">
-      <div className="flex">
+      <div className="flex flex-col items-left">
+        {/* Seção de Fichas Online */}
         <h1 className="text-[3rem] bg-black/50 text-gray-300 p-2 m-2 w-[300px] text-center rounded-lg">
-          Characters
+          Fichas Online
         </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {simpleSheets.map((sheet) => (
+            <div
+              key={sheet.name}
+              className="bg-black/50 text-gray-300 p-4 m-2 rounded-lg"
+            >
+              <h2>{sheet.name}</h2>
+              <p>Idade: {sheet.age}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Seção de Fichas Locais */}
+        <h1 className="text-[3rem] bg-black/50 text-gray-300 p-2 m-2 w-[300px] text-center rounded-lg">
+          Fichas Locais
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {localSheets.map((sheet) => (
+            <div
+              key={sheet.name}
+              className="bg-black/50 text-gray-300 p-4 m-2 rounded-lg"
+            >
+              <h2>{sheet.name}</h2>
+              <p>Idade: {sheet.age}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
