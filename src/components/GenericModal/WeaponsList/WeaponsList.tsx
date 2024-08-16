@@ -64,7 +64,7 @@ const WeaponsList: React.FC = () => {
                     placeholder="Search by name..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="p-2 border border-gray-300 rounded-md shadow-sm w-1/2"
+                    className="p-2 border border-gray-300 rounded-md shadow-sm w-1/2 bg-gray-800"
                 />
                 <select
                     value={filter || ''}
