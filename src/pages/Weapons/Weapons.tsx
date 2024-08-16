@@ -4,7 +4,9 @@ import WeaponsList from "../../components/GenericModal/WeaponsList/WeaponsList";
 const Weapons: React.FC = () => {
     return (
         <>
-            <WeaponsList />
+            <div className="bg-[url('../wallpapers/weapons-list-wallpaper.jpg')] bg-cover bg-center bg-fixed min-h-screen text-white">
+                <WeaponsList />
+            </div>
         </>
     )
 }

@@ -69,7 +69,7 @@ const WeaponsList: React.FC = () => {
                 <select
                     value={filter || ''}
                     onChange={(e) => setFilter(e.target.value)}
-                    className="p-2 border border-gray-300 rounded-md shadow-sm w-1/4"
+                    className="p-2 border border-gray-300 rounded-md shadow-sm w-1/4 bg-gray-800"
                 >
                     <option value="">All Categories</option>
                     {[...new Set(data.map((weapon) => weapon.Category || 'Unknown'))].map((category) => (
@@ -77,9 +77,9 @@ const WeaponsList: React.FC = () => {
                     ))}
                 </select>
             </div>
-            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 bg-white/50 p-2">
+            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2">
                 {filteredWeapons.map((weapon, index) => (
-                    <li key={index} className="p-4 border border-gray-300 rounded-md shadow-sm">
+                    <li key={index} className="p-4 border border-gray-300 rounded-md shadow-sm bg-gray-900/70">
                         <h2 className="font-bold text-lg">{weapon.Name}</h2>
                         <p><strong>Category:</strong> {weapon.Category}</p>
                         <p><strong>Manufacturer:</strong> {weapon.Manufacturer}</p>
