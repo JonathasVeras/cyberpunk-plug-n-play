@@ -48,6 +48,7 @@ const characterSheet: any = {
   gender: "M",
   baseSpeed: 5,
   maxHealth: 16,
+  weapons: [],
 };
 
 const Login: React.FC = () => {

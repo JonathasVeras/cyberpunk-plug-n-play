@@ -1,3 +1,5 @@
+import { Weapon } from "./IWeapon";
+
 interface IAttributes {
   acceptance: number;
   agility: number;
@@ -44,4 +46,5 @@ export interface ICharacterSheet {
   gender: string;
   baseSpeed: number;
   maxHealth: number;
+  weapons: Weapon[];
 }

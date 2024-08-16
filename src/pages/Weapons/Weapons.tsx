@@ -1,5 +1,5 @@
 import React from "react";
-import WeaponsList from "../../components/GenericModal/WeaponsList/WeaponsList";
+import WeaponsList from "../../components/WeaponsList/WeaponsList";
 
 const Weapons: React.FC = () => {
     return (

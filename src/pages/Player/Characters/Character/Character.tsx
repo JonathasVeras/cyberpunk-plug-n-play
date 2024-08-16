@@ -1,14 +1,95 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ICharacterSheet } from '../../../../interfaces/characterSheet';
+import { Weapon } from '../../../../interfaces/IWeapon';
+import WeaponsListSheet from '../../../../components/WeaponsList/WeaponsListSheet';
+import weaponsData from '../../../../jsons/Weapons-Cyberpunk.json';
+import ActionsSidebar from '../../../../components/ActionsSidebar/ActionsSidebar';
 
 const Character: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const [character, setCharacter] = useState<ICharacterSheet | null>(null);
+    const [weaponList, setWeaponList] = useState<Weapon[]>([]);
+
+    useEffect(() => {
+        const formattedData: Weapon[] = weaponsData.map((weapon) => ({
+            Category: weapon.Category,
+            Manufacturer: weapon.Manufacturer,
+            Name: weapon.Name,
+            WeaponSkill: weapon["Weapon Skill"],
+            Damage: weapon.Damage,
+            AccuracyBonus: weapon["Accuracy Bonus"],
+            Magazine: weapon.Magazine,
+            RateOfFire: weapon["Rate of Fire"],
+            HandsRequired: weapon["Hands Required"],
+            Availability: weapon.Availability,
+            Concealment: weapon.Concealment,
+            Quality: weapon.Quality,
+            Cost: weapon.Cost,
+            AdditionalInfo: weapon["Additional Info"],
+            Description: weapon.Description,
+        }));
+
+        setWeaponList(formattedData);
+    }, []);
 
     useEffect(() => {
         fetchCharacter();
     }, [id]);
+
+    const handleAddWeapon = (weapon: Weapon) => {
+        if (character) {
+            const newWeapon: Weapon = {
+                Category: weapon.Category || null,
+                Manufacturer: weapon.Manufacturer || null,
+                Name: weapon.Name || '',
+                WeaponSkill: weapon.WeaponSkill || null,
+                Damage: weapon.Damage || '',
+                AccuracyBonus: weapon.AccuracyBonus || null,
+                Magazine: weapon.Magazine || null,
+                RateOfFire: weapon.RateOfFire || null,
+                HandsRequired: weapon.HandsRequired || null,
+                Availability: weapon.Availability || null,
+                Concealment: weapon.Concealment || null,
+                Quality: weapon.Quality || null,
+                Cost: weapon.Cost || null,
+                AdditionalInfo: weapon.AdditionalInfo || null,
+                Description: weapon.Description || null,
+            };
+
+            const updatedCharacter = { ...character, weapons: [...character.weapons, newWeapon] };
+            setCharacter(updatedCharacter);
+
+            if (id?.startsWith('local-')) {
+                const localIndex = parseInt(id.replace('local-', ''), 10);
+                const storedSheets = localStorage.getItem('CharacterSheetsOffline');
+                if (storedSheets) {
+                    const sheets = JSON.parse(storedSheets) as ICharacterSheet[];
+                    sheets[localIndex] = updatedCharacter;
+                    localStorage.setItem('CharacterSheetsOffline', JSON.stringify(sheets));
+                }
+            }
+        }
+    };
+
+    const handleRemoveWeapon = (index: number) => {
+        if (character) {
+            const newWeapons = [...character.weapons];
+            newWeapons.splice(index, 1);
+            const updatedCharacter = { ...character, weapons: newWeapons };
+            setCharacter(updatedCharacter);
+
+            if (id?.startsWith('local-')) {
+                const localIndex = parseInt(id.replace('local-', ''), 10);
+                const storedSheets = localStorage.getItem('CharacterSheetsOffline');
+                if (storedSheets) {
+                    const sheets = JSON.parse(storedSheets) as ICharacterSheet[];
+                    sheets[localIndex] = updatedCharacter;
+                    localStorage.setItem('CharacterSheetsOffline', JSON.stringify(sheets));
+                }
+            }
+        }
+    };
 
     const fetchCharacter = () => {
         if (id?.startsWith('local-')) {
@@ -30,8 +111,8 @@ const Character: React.FC = () => {
     }
 
     return (
-        <div className="bg-[url('../wallpapers/character-sheet-play-wallpaper.jpg')] bg-cover bg-center bg-fixed min-h-screen text-white">
-            <div className="container mx-auto p-8 bg-black/50 rounded-lg">
+        <div className="bg-[url('../wallpapers/character-sheet-play-wallpaper.jpg')] bg-cover bg-center bg-fixed min-h-screen text-white flex flex-col sm:grid sm:grid-cols-3">
+            <div className="container mx-auto p-8 bg-black/50 rounded-lg sm:col-span-2">
                 <header className="mb-6 text-center">
                     <h1 className="text-3xl font-bold">{character.name}</h1>
                     <p className="text-lg">Age: {character.age}</p>
@@ -110,17 +191,12 @@ const Character: React.FC = () => {
 
                 {/* Items, Weapons, Cyberware, and Skills */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-                    <div className="bg-gray-800/70 p-4 rounded-lg">
-                        <h2 className="text-xl font-semibold mb-4">Weapons</h2>
-                        <div className="space-y-2">
-                            {/* Example of a weapon item */}
-                            <div className="flex justify-between bg-gray-900 p-2 rounded-lg">
-                                <span>Weapon Name</span>
-                                <span>Damage: 10</span>
-                            </div>
-                            {/* Additional weapon items */}
-                        </div>
-                    </div>
+                    <WeaponsListSheet
+                        weapons={character.weapons}
+                        onAddWeapon={handleAddWeapon}
+                        onRemoveWeapon={handleRemoveWeapon}
+                        availableWeapons={weaponList}
+                    />
 
                     <div className="bg-gray-800/70 p-4 rounded-lg">
                         <h2 className="text-xl font-semibold mb-4">Items</h2>
@@ -159,6 +235,8 @@ const Character: React.FC = () => {
                     </div>
                 </div>
             </div>
+            {/* Actions Sidebar */}
+            <ActionsSidebar weapons={character.weapons} />
         </div>
     );
 };
