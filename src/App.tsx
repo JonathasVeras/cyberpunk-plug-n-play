@@ -13,9 +13,9 @@ export function App() {
   return (
     <AuthProvider>
       <div className="App">
-        {location.pathname !== '/' && location.pathname !== '/register' && (
+        {location.pathname !== "/" && location.pathname !== "/register" && (
           <nav>
-            <ul className="flex space-x-4 p-4 bg-yellow-500">
+            <ul className="flex space-x-4 p-4 bg-yellow-punk">
               <li>
                 <Link to="/">Login</Link>
               </li>

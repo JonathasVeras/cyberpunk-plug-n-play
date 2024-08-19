@@ -17,7 +17,7 @@ const CriarFicha: React.FC = () => {
     const ficha = { antecedente };
     localStorage.setItem("ficha", JSON.stringify(ficha));
     // Redirecionar para a próxima página
-    navigate("/NewCharacter2");
+    navigate("/characters/new-character2");
   };
 
   return (
