@@ -194,7 +194,7 @@ const CreateCharacter: React.FC = () => {
             </label>
             <input
               type="text"
-              className="bg-black text-blue-punk font-sans text-center"
+              className="bg-black text-blue-punk w-20 font-sans text-center"
               value={remainingPoints}
               readOnly
             />
@@ -215,7 +215,7 @@ const CreateCharacter: React.FC = () => {
                         </label>
                         <input
                           type="number"
-                          className="bg-black text-blue-punk"
+                          className="bg-black text-blue-punk w-20"
                           value={tempValues[subAttr as keyof Attributes]}
                           onChange={(e) =>
                             handleAttributeChange(
@@ -245,7 +245,7 @@ const CreateCharacter: React.FC = () => {
                       </label>
                       <input
                         type="number"
-                        className="bg-black text-blue-punk"
+                        className="bg-black text-blue-punk w-20"
                         value={tempValues[subAttr as keyof Attributes]}
                         onChange={(e) =>
                           handleAttributeChange(
@@ -279,7 +279,7 @@ const CreateCharacter: React.FC = () => {
                       </label>
                       <input
                         type="number"
-                        className="bg-black text-blue-punk"
+                        className="bg-black text-blue-punk w-20"
                         value={tempValues[subAttr as keyof Attributes]}
                         onChange={(e) =>
                           handleAttributeChange(
@@ -312,7 +312,7 @@ const CreateCharacter: React.FC = () => {
                         </label>
                         <input
                           type="number"
-                          className="bg-black text-blue-punk"
+                          className="bg-black text-blue-punk w-20"
                           value={tempValues[subAttr as keyof Attributes]}
                           onChange={(e) =>
                             handleAttributeChange(
@@ -343,7 +343,7 @@ const CreateCharacter: React.FC = () => {
                         </label>
                         <input
                           type="number"
-                          className="bg-black text-blue-punk"
+                          className="bg-black text-blue-punk w-20"
                           value={tempValues[subAttr as keyof Attributes]}
                           onChange={(e) =>
                             handleAttributeChange(
@@ -373,7 +373,7 @@ const CreateCharacter: React.FC = () => {
                       </label>
                       <input
                         type="number"
-                        className="bg-black text-blue-punk"
+                        className="bg-black text-blue-punk w-20"
                         value={tempValues[subAttr as keyof Attributes]}
                         onChange={(e) =>
                           handleAttributeChange(
