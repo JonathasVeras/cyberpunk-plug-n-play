@@ -46,9 +46,14 @@ const Characters: React.FC = () => {
         console.error("Erro ao buscar fichas online:", error);
       }
     } else {
-      const storedSheets = localStorage.getItem("CharacterSheetsOffline");
+      // Buscar fichas offline
+      const storedSheets = localStorage.getItem("fichas");
       if (storedSheets) {
-        setLocalSheets(JSON.parse(storedSheets));
+        // Converte o objeto armazenado em um array
+        const storedSheetsArray: ICharacterSheet[] = Object.values(
+          JSON.parse(storedSheets)
+        );
+        setLocalSheets(storedSheetsArray);
       } else {
         setLocalSheets([]);
       }

@@ -7,6 +7,7 @@ export default {
         "yellow-punk": "#f3eb00",
         "pinkish-red": "#ef767a",
         "blue-punk": "#00ffff",
+        "dark-purple": "#220425",
       },
     },
   },
