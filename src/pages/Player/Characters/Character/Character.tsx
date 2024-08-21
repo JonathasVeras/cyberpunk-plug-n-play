@@ -58,7 +58,6 @@ const Character: React.FC = () => {
 
   useEffect(() => {
     fetchCharacter();
-    console.log("ID é: " + id);
   }, [id]);
 
   const handleAddWeapon = (weapon: Weapon) => {
@@ -201,9 +200,6 @@ const Character: React.FC = () => {
         if (!response.ok) throw new Error("Erro na requisição");
         return response.json();
       })
-      .then(() => {
-        console.log(id + " atualizada com sucesso");
-      })
       .catch((error) => {
         console.error("Erro ao enviar os dados:", error);
       });
@@ -238,7 +234,6 @@ const Character: React.FC = () => {
         } else {
           console.error("Ficha online não encontrada.");
         }
-        console.log("Ficha de " + id + " acessada com sucesso");
       } catch (error) {
         console.error("Erro ao buscar ficha online:", error);
       }

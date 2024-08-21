@@ -46,8 +46,6 @@ const Characters: React.FC = () => {
             return result;
           }, {});
 
-        console.log(userSheets)
-
         const sheetsArray = Object.entries(userSheets).map(
           ([name, details]: [any, any]) => ({
             name,
@@ -94,7 +92,6 @@ const Characters: React.FC = () => {
             return response.json();
           })
           .then(() => {
-            console.log(`Ficha ${sheetDeleteName} removida com sucesso.`);
             alert(`Ficha ${sheetDeleteName} removida com sucesso.`);
 
             setSimpleSheets((prevSheets) =>
@@ -123,11 +120,9 @@ const Characters: React.FC = () => {
 
   const handleDeleteClick = (index: any, onOrOff: any, name: any) => {
     setIsOnlineSheet(onOrOff);
-    console.log("isOnlineSheet: " + isOnlineSheet);
 
     if (onOrOff) {
       setSheetDeleteName(name);
-      console.log("nome da ficha pra ser deletada: " + sheetDeleteName);
     } else {
       setSheetToDelete(index);
     }

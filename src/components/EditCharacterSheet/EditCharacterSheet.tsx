@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { ICharacterSheet } from '../../interfaces/characterSheet';
 import Attributes from '../CreateCharacter/Attributes/Attributes';
 
@@ -48,10 +48,6 @@ const EditCharacterSheet: React.FC<EditCharacterSheetProps> = ({ character, setC
     };
 
     if (!formState) return null;
-
-    useEffect(() => {
-        console.log(character);
-    }, [character]);
 
     return (
         <div className="p-6 rounded-lg shadow-lg mx-auto">
