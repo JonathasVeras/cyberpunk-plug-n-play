@@ -1,3 +1,4 @@
+import { ICyberware } from "./ICyberware";
 import { Weapon } from "./IWeapon";
 
 interface IAttributes {
@@ -47,4 +48,5 @@ export interface ICharacterSheet {
   baseSpeed: number;
   maxHealth: number;
   weapons: Weapon[];
+  cyberware: ICyberware[];
 }

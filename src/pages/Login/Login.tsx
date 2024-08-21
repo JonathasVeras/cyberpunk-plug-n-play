@@ -49,6 +49,7 @@ const characterSheet: any = {
   baseSpeed: 5,
   maxHealth: 16,
   weapons: [],
+  cyberware: [],
 };
 
 const Login: React.FC = () => {

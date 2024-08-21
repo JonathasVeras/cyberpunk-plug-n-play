@@ -47,7 +47,7 @@ const Characters: React.FC = () => {
       }
     } else {
       // Buscar fichas offline
-      const storedSheets = localStorage.getItem("fichas");
+      const storedSheets = localStorage.getItem("CharacterSheetsOffline");
       if (storedSheets) {
         // Converte o objeto armazenado em um array
         const storedSheetsArray: ICharacterSheet[] = Object.values(

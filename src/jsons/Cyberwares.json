@@ -1,0 +1,1538 @@
+[
+    {
+        "Title": "Artificial Shoulder Mount",
+        "Category": "Borgware",
+        "Manufacturer": null,
+        "Description": "User can mount 2 Cyberarms under first set of arms.",
+        "Cost": 1000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Biosystem",
+        "Category": "Borgware",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 10000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Borgware Hardened Shielding",
+        "Category": "Borgware",
+        "Manufacturer": null,
+        "Description": "Protect a single piece of Borgware against EMP effects",
+        "Cost": 1000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Bug Eye",
+        "Category": "Borgware",
+        "Manufacturer": "Cyclops International",
+        "Description": "An oversized Cybereye resembling the bulging eyeball of an insect. Contains 5 slots for Cybereye options",
+        "Cost": 500,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Dragoon Plating",
+        "Category": "Borgware",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 5000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Dragoon Plating, Metalgear",
+        "Category": "Borgware",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 15000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Modular Finger Enthusiast Cyberhand",
+        "Category": "Borgware",
+        "Manufacturer": "Dynalar",
+        "Description": "Eight fingers. No waiting",
+        "Cost": 500,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Fūma Kotarō Linear Frame",
+        "Category": "Borgware",
+        "Manufacturer": "Yakuza",
+        "Description": "Makes you strong & stealthy. Lots of blades",
+        "Cost": 5000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Heavy Subdermal Plating",
+        "Category": "Borgware",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 5000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Implanted Linear Frame Σ",
+        "Category": "Borgware",
+        "Manufacturer": null,
+        "Description": "Enhanced skeleton and support structure. Increases BODY to 12. The increase changes HP, Wound Threshold, and Death Save. Requires BODY 6 and Grafted Muscle and Bone Lace.",
+        "Cost": 1000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Implanted Linear Frame β",
+        "Category": "Borgware",
+        "Manufacturer": null,
+        "Description": "Enhanced skeleton and support structure. Increases BODY to 14. The increase changes HP, Wound Threshold, and Death Save. Requires BODY 8 and 2 Grafted Muscle and Bone Lace.",
+        "Cost": 5000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Linear Frame Ω, Internal",
+        "Category": "Borgware",
+        "Manufacturer": null,
+        "Description": "A perfected cybernetic endoskeleton enhanced further by hydraulic and myomar muscles.",
+        "Cost": 10000,
+        "Humanity": "28 (8d6)"
+    },
+    {
+        "Title": "MonoVision",
+        "Category": "Borgware",
+        "Manufacturer": "Kiroshi",
+        "Description": "Doesn't let you shoot optic blasts. Does let you install Cybereye options without pairing.",
+        "Cost": 500,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "LF-001 SWAT Linear Frame",
+        "Category": "Borgware",
+        "Manufacturer": "Polska CyberTechnologies",
+        "Description": "Good for swimming, climbing, and beating people",
+        "Cost": 5000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "MultiOptic Mount",
+        "Category": "Borgware",
+        "Manufacturer": null,
+        "Description": "User can mount up to 5 additional Cybereyes.",
+        "Cost": 1000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Sensor Array",
+        "Category": "Borgware",
+        "Manufacturer": null,
+        "Description": "User can install up to 5 additional Cyberaudio Options. Requires Cyberaudio Suite but does not take up any Cyberaudio Option Slot.",
+        "Cost": 1000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Vermillion Linear Frame",
+        "Category": "Borgware",
+        "Manufacturer": "Wyzard Technologies",
+        "Description": "Jump high. Go fast. Be strong",
+        "Cost": 5000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Hardened Shielding",
+        "Category": "Coverings",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 1000,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Plastic Covering",
+        "Category": "Coverings",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 500,
+        "Humanity": "0 (N/A)"
+    },
+    {
+        "Title": "RealSkinn™",
+        "Category": "Coverings",
+        "Manufacturer": "Gene-Tek",
+        "Description": "Artificial skin coating for Cyberlimb. Requires a Cyberarm or Cyberleg but does not take an Option Slot.",
+        "Cost": 500,
+        "Humanity": "0 (N/A)"
+    },
+    {
+        "Title": "Sponsored Covering",
+        "Category": "Coverings",
+        "Manufacturer": null,
+        "Description": "Covers the Cyberarm in an illustrated advertisement. Assuming the user remains in good standing with the sponsor and displays the arm uncovered for a percentage of the day, they receive 20eb on the first of each month. Sponsors have been known to repossess the entire arm if the wearer breaks the terms of their conditions. Requires a Cyberarm.",
+        "Cost": 50,
+        "Humanity": "0 (N/A)"
+    },
+    {
+        "Title": "Superchrome",
+        "Category": "Coverings",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": null,
+        "Humanity": null
+    },
+    {
+        "Title": "Big Knucks",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Armored knuckles. Medium Melee Weapon. Can be concealed. Can be installed as the only piece of Cyberware in a meat arm.",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "ChainRipp",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "A retractable chainsaw built into your arm.",
+        "Cost": 500,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Cyberarm",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Replacement arm. Has 4 Option Slots. Comes installed with Standard Hand that doesn't cause Humanity Loss or take up an Option Slot.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Gang Jazzler",
+        "Category": "Arms",
+        "Manufacturer": "Cybermatrix",
+        "Description": "Enough electricity flowing through your finger to stun an elephant. If they haven't gone extinct.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Cyberpillow",
+        "Category": "Arms",
+        "Manufacturer": "CapsuleCo",
+        "Description": "Provides no benefit other than making it easier to take a nap wherever you want. Requires a Cyberarm.",
+        "Cost": 100,
+        "Humanity": "0 (N/A)"
+    },
+    {
+        "Title": "Integrated Cyberscanner",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Cyberscanner installed in Cyberarm. Requires a Cyberarm",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Modular Finger Enthusiast Cyberhand",
+        "Category": "Arms",
+        "Manufacturer": "Dynalar",
+        "Description": "Eight fingers. No waiting",
+        "Cost": 500,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Professional Cyberhand",
+        "Category": "Arms",
+        "Manufacturer": "Dynalar",
+        "Description": null,
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Extra-Jointed Cyberlimb Upgrade",
+        "Category": "Arms",
+        "Manufacturer": "Rocklin Augmentics",
+        "Description": "Adds extra points of articulation. +2 bonus to Contortionist Skill Checks",
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Flashbulb",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Blind your enemies with your arm",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Grapple Hand",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Fires hand, along with a grapple line up to 30m/yds. Requires a Cyberarm.",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Hardened Shielding",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 1000,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Holo Projector Palm",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "A hologram projector built into the user's palm. Can output a potentially interactive holographic projection roughly the size of a soda can when linked to an Agent. Can be installed as the only piece of Cyberware in a meat arm.",
+        "Cost": 100,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Integrated Cyberdeck Upgrade",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "An additional slot for your arm-mounted Cyberdeck",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Medscanner",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Medscanner installed in Cyberarm. Helps diagnose illness and injury. +2 to First Aid and Paramedic. Requires a Cyberarm and takes 2 Option Slots.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Modular Finger Cyberhand",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "A hand for modular Cyberfingers",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Neo-Soviet Cyberarm",
+        "Category": "Arms",
+        "Manufacturer": "Soviet Union",
+        "Description": "Neo-Soviet charm for your Cyberarm",
+        "Cost": 100,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "PersonalPak KibbleWarmer",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Small cylindrical rotisserie oven installed in the forearm, sized to fit a PersonalPak Kibble cylinder and warm it to exactly the right toasty temperature for crispy enjoyment. Requires a Cyberarm.",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Popup Grenade Launcher",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "A single-shot Grenade Launcher installed in a Cyberarm. Weapon can be concealed. Requires a Cyberarm and takes up 2 Option Slots.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Popup Melee Weapon",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Any Light, Medium, or Heavy Melee Weapon installed in a Cyberarm. Weapon can be concealed even if not normally concealable. Requires a Cyberarm and takes up 2 Option Slots.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Popup Net Launcher",
+        "Category": "Arms",
+        "Manufacturer": "Pursuit Security",
+        "Description": "Shoot nets from your arm like a superhero",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Popup Ranged Weapon",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Any One-Handed Ranged Weapon installed in a Cyberarm. Weapon can be concealed even if not normally concealable. Requires a Cyberarm and takes up 2 Option Slots.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Popup Shield",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Popup Shotgun",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "A Shotgun in your arm",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Psiberstuff Watch-Man",
+        "Category": "Arms",
+        "Manufacturer": "Psiberstuff",
+        "Description": "A fully-functional Agent with a flip-up screen built into the cyberarm",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Gas Jet",
+        "Category": "Arms",
+        "Manufacturer": "Pursuit Security",
+        "Description": "Aerosol gas launcher. Covers a large area with a chosen Street Drug or toxin. Requires a Cyberarm and takes 2 Option Slots.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Personal Shredder",
+        "Category": "Arms",
+        "Manufacturer": "Pursuit Security",
+        "Description": "Commercial grade cross cut shredder concealed within the cyberarm, complete with internal reservoir for storing shreds. Requires a Cyberarm.",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Quick Change Mount",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Allows user to remove or install a Cyberarm as an Action",
+        "Cost": 100,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Blitzkrieg Arc-Thrower",
+        "Category": "Arms",
+        "Manufacturer": "Radline Laboratories",
+        "Description": "No hand but you can now throw lightning at multiple enemies at once.",
+        "Cost": 1000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "MicroWaldo",
+        "Category": "Arms",
+        "Manufacturer": "Raven Microcybernetics",
+        "Description": "A spider-like collection of probes turn your hand into a monster of surgical precision.",
+        "Cost": 1000,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Reinforced Cyberlimb Upgrade",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Say goodbye to breaking this limb",
+        "Cost": 1000,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Rippers",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Carbo-glass claws. Medium Melee Weapon. Can be concealed. Can be installed as the only piece of Cyberware in a meat arm.",
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "MIRD113 Gun Hand",
+        "Category": "Arms",
+        "Manufacturer": "Rocklin Augmentics",
+        "Description": null,
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Scratchers",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Carbo-glass fingernails. Light Melee Weapon. Can be concealed. Can be installed as the only piece of Cyberware in a meat arm.",
+        "Cost": 100,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Shoulder Cam",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Video camera mounted in shoulder. Can be concealed. Requires a Cyberarm and takes up 2 Option Slots.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Slice 'N Dice",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Monofilament whip implanted in the thumb. Medium Melee Weapon. Can be concealed. Can be installed as the only piece of Cyberware in a meat arm.",
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Sponsored Covering",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Covers the Cyberarm in an illustrated advertisement. Assuming the user remains in good standing with the sponsor and displays the arm uncovered for a percentage of the day, they receive 20eb on the first of each month. Sponsors have been known to repossess the entire arm if the wearer breaks the terms of their conditions. Requires a Cyberarm.",
+        "Cost": 50,
+        "Humanity": "0 (N/A)"
+    },
+    {
+        "Title": "Subdermal Grip",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Cyberarm Option. Neuralware Option. Subdermal plate under the palm allows user to make use of Smartguns. A cost-effective alternative to Interface Plugs. Can be installed as the only piece of Cyberware in a meat arm. Requires Neural Link and takes up a Neuralware Option Slot.",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Techscanner",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Techscanner installed in Cyberarm. Helps diagnose broken tech. +2 to multiple TECH-based Skills. Requires a Cyberarm and takes 2 Option Slots.",
+        "Cost": 750,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Tool Hand",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Fingers contain screwdriver, wrench, small drill, and other tools. Can be installed as only piece of Cyberware in a meat arm.",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Wolvers",
+        "Category": "Arms",
+        "Manufacturer": null,
+        "Description": "Long claws extended from the knuckles. Heavy Melee Weapon. Can be concealed. Can be installed as the only piece of Cyberware in a meat arm.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Cyberleg",
+        "Category": "Legs",
+        "Manufacturer": null,
+        "Description": "Replacement leg. Has 3 Option Slots. Comes installed with Standard Foot that doesn't cause Humanity Loss or take up an Option Slot. Most Cyberleg options must be paired (purchased twice and installed in two different Cyberlegs on a user. HL must be paid for each).",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Extra-Jointed Cyberlimb Upgrade",
+        "Category": "Legs",
+        "Manufacturer": "Rocklin Augmentics",
+        "Description": "Adds extra points of articulation. +2 bonus to Contortionist Skill Checks",
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Grip Foot",
+        "Category": "Legs",
+        "Manufacturer": null,
+        "Description": "Traction enhanced. Negates movement penalty when climbing. Requires two Cyberlegs and must be paired.",
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Hardened Shielding",
+        "Category": "Legs",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 1000,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Jump Booster",
+        "Category": "Legs",
+        "Manufacturer": null,
+        "Description": "Hydraulics in legs. Negates movement penalty when jumping. Requires two Cyberlegs, takes up 2 Option Slots, and must be paired.",
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "PerfectFit Cyberfoot",
+        "Category": "Legs",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 100,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Prehensile Cyberfoot",
+        "Category": "Legs",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 1000,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Reinforced Cyberlimb Upgrade",
+        "Category": "Legs",
+        "Manufacturer": null,
+        "Description": "Say goodbye to breaking this limb",
+        "Cost": 1000,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Skate Foot",
+        "Category": "Legs",
+        "Manufacturer": null,
+        "Description": "Inline skates built into feet. Can be concealed. Increases movement by 6m/yds when using Run Action. Requires two Cyberlegs and must be paired.",
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Talon Foot",
+        "Category": "Legs",
+        "Manufacturer": null,
+        "Description": "Blade mounted in foot. Light Melee Weapon. Can be concealed. Can be installed as the only piece of Cyberware in a meat leg.",
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Web Foot",
+        "Category": "Legs",
+        "Manufacturer": null,
+        "Description": "Thin webbing between toes. Negates movement penalty when swimming. Requires two Cyberlegs and must be paired.",
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Romanova Cyberlegs",
+        "Category": "Legs",
+        "Manufacturer": "Wyzard",
+        "Description": "Comes in pairs. Comes with heels. The heels are weapons. You can poison them.",
+        "Cost": 1000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Zero Gravity Users",
+        "Category": "Legs",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 1000,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Amplified Hearing",
+        "Category": "Cyberaudio",
+        "Manufacturer": null,
+        "Description": "+2 to Perception for Checks involving hearing. Requires a Cyberaudio Suite.",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Audio Recorder",
+        "Category": "Cyberaudio",
+        "Manufacturer": null,
+        "Description": "Records audio to Memory Chip or linked Agent. Requires a Cyberaudio Suite.",
+        "Cost": 100,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Bug Detector",
+        "Category": "Cyberaudio",
+        "Manufacturer": null,
+        "Description": "Beeps when within 2m/yds of a listening device. Requires a Cyberaudio Suite.",
+        "Cost": 100,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Cyberaudio Suite",
+        "Category": "Cyberaudio",
+        "Manufacturer": null,
+        "Description": "Has 3 Option Slots. Cannot install more than 1.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Discount Cyberaudio Suite",
+        "Category": "Cyberaudio",
+        "Manufacturer": null,
+        "Description": "An inferior Cyberaudio Suite at an affordable price",
+        "Cost": 100,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "PiR2",
+        "Category": "Cyberaudio",
+        "Manufacturer": "Euro Business Machines",
+        "Description": "EBM’s version of the basic Internal Agent improves reliability without increasing the risk of migraines.",
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Homing Tracer",
+        "Category": "Cyberaudio",
+        "Manufacturer": null,
+        "Description": "Can follow a linked tracer up to 1 mile away. Requires a Cyberaudio Suite.",
+        "Cost": 100,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Internal Agent",
+        "Category": "Cyberaudio",
+        "Manufacturer": null,
+        "Description": "Fully functional Agent installed internally. Can be linked to a Cybereye with Chyron display. Otherwise, audio only. Requires a Cyberaudio Suite.",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Level Dampener",
+        "Category": "Cyberaudio",
+        "Manufacturer": null,
+        "Description": "User immune to effects caused by loud noises. Requires a Cyberaudio Suite.",
+        "Cost": 100,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "BrainGen",
+        "Category": "Cyberaudio",
+        "Manufacturer": "Mediaware",
+        "Description": null,
+        "Cost": 50,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Radar Detector",
+        "Category": "Cyberaudio",
+        "Manufacturer": null,
+        "Description": "Beeps if active radar beam is within 100m/yd. Requires a Cyberaudio Suite.",
+        "Cost": 500,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Radio Communicator",
+        "Category": "Cyberaudio",
+        "Manufacturer": null,
+        "Description": "User can communicate via radio. 1 mile range. Requires a Cyberaudio Suite.",
+        "Cost": 100,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Radio Scanner / Music Player",
+        "Category": "Cyberaudio",
+        "Manufacturer": null,
+        "Description": "Can play music from Data Pool or Memory Chip or tune into radio broadcasts within 1 mile. Requires a Cyberaudio Suite.",
+        "Cost": 50,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Drake",
+        "Category": "Cyberaudio",
+        "Manufacturer": "Raven Microcybernetics",
+        "Description": null,
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Neuron",
+        "Category": "Cyberaudio",
+        "Manufacturer": "Rocklin Augmentics",
+        "Description": null,
+        "Cost": 1000,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Scrambler / Descrambler",
+        "Category": "Cyberaudio",
+        "Manufacturer": null,
+        "Description": "Allows user to scramble outgoing communications and descramble incoming communications. Requires a Cyberaudio Suite.",
+        "Cost": 100,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Signal Jammer",
+        "Category": "Cyberaudio",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Voice Stress Analyser",
+        "Category": "Cyberaudio",
+        "Manufacturer": null,
+        "Description": "+2 to Human Perception and Interrogation Checks. Requires a Cyberaudio Suite.",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Anti-Dazzle",
+        "Category": "Cyberoptics",
+        "Manufacturer": null,
+        "Description": "User immune to effects caused by flashes of light. Requires two Cybereyes and must be paired.",
+        "Cost": 100,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Chipware Compartment",
+        "Category": "Cyberoptics",
+        "Manufacturer": null,
+        "Description": "Compartment can conceal up to four pieces of Chipware without a Check. Chipware can be easily removed as an Action by spinning the eye in its socket. Requires a Cybereye and takes 3 Option Slots",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Chyron",
+        "Category": "Cyberoptics",
+        "Manufacturer": null,
+        "Description": "Projects subscreen into user's field of vision. Requires a Cybereye.",
+        "Cost": 100,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Color Shift",
+        "Category": "Cyberoptics",
+        "Manufacturer": null,
+        "Description": "Unlimited color and pattern changes for the eye. Requires a Cybereye.",
+        "Cost": 100,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Cybereye",
+        "Category": "Cyberoptics",
+        "Manufacturer": null,
+        "Description": "Artificial Eye. Each Cybereye has 3 Option Slots. Some options must be paired (purchased twice and installed in two different Cybereyes on a user. HL must be paid for each).",
+        "Cost": 100,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Bug Eye",
+        "Category": "Cyberoptics",
+        "Manufacturer": "Cyclops International",
+        "Description": "An oversized Cybereye resembling the bulging eyeball of an insect. Contains 5 slots for Cybereye options",
+        "Cost": 500,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Dartgun",
+        "Category": "Cyberoptics",
+        "Manufacturer": null,
+        "Description": "Single shot Dartgun Exotic Weapon concealed in eye. Requires a Cybereye and takes up 3 Option Slots.",
+        "Cost": 500,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Hardened Cybereye Casing",
+        "Category": "Cyberoptics",
+        "Manufacturer": null,
+        "Description": "Protect your Cybereye against EMP effects",
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Image Enhancer",
+        "Category": "Cyberoptics",
+        "Manufacturer": null,
+        "Description": "Adds +2 to Perception, Lip Reading, and Conceal/Reveal Object. Requires two Cybereyes and must be paired.",
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "MonoVision",
+        "Category": "Cyberoptics",
+        "Manufacturer": "Kiroshi",
+        "Description": "Doesn't let you shoot optic blasts. Does let you install Cybereye options without pairing.",
+        "Cost": 500,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Low-Light / Infrared / UV",
+        "Category": "Cyberoptics",
+        "Manufacturer": null,
+        "Description": "User can ignore penalties due to darkness, smoke, fog, etc. Requires two Cybereyes and must be paired.",
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "MicroOptics",
+        "Category": "Cyberoptics",
+        "Manufacturer": null,
+        "Description": "Provides user with 400x magnification. Requires a Cybereye.",
+        "Cost": 100,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "MicroVideo",
+        "Category": "Cyberoptics",
+        "Manufacturer": null,
+        "Description": "Camera in eye. Records audio and video to Memory Chip or linked Agent. Requires a Cybereye and takes 2 option slots.",
+        "Cost": 500,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Radiation Detector",
+        "Category": "Cyberoptics",
+        "Manufacturer": null,
+        "Description": "Radiation readings within 100m/yd displayed in form of blue glow. Requires a Cybereye.",
+        "Cost": 1000,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Sponsored Cybereye",
+        "Category": "Cyberoptics",
+        "Manufacturer": null,
+        "Description": "A cheap Cybereye with Chyron and pop-up ads",
+        "Cost": 50,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Targeting Scope",
+        "Category": "Cyberoptics",
+        "Manufacturer": null,
+        "Description": "Adds +1 to Check when making Aimed Shot. Requires a Cybereye.",
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "TeleOptics",
+        "Category": "Cyberoptics",
+        "Manufacturer": null,
+        "Description": "Can see detail up to 800m/yd away. +1 to Aimed Shots against target 51m/yds or farther away. Requires a Cybereye.",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "VIC Jammer",
+        "Category": "Cyberoptics",
+        "Manufacturer": null,
+        "Description": "Requires a Cybereye and takes 2 option slots. Does not need to be paired.",
+        "Cost": 100,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Virtuality",
+        "Category": "Cyberoptics",
+        "Manufacturer": null,
+        "Description": "Projects cyberspace imagery over user's view of the world. Requires two Cybereyes and must be paired.",
+        "Cost": 100,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Combat Jaw",
+        "Category": "External Body",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 500,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Combat Tail",
+        "Category": "External Body",
+        "Manufacturer": null,
+        "Description": "User's spine is extended to connect the nerves to a weaponised tail module. Requires Neural Link.",
+        "Cost": 1000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Dragoon Plating",
+        "Category": "External Body",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 5000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Dragoon Plating, Metalgear",
+        "Category": "External Body",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 15000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "External Vidscreen",
+        "Category": "External Body",
+        "Manufacturer": "Nu-Tek",
+        "Description": "A flexible rectangular Nu-Tek Touch TV panel approximately the dimensions of the Cyberpunk RED Core Rulebook is installed subcutaneously, turning any desired part of the user's body into a screen that can be utilized by a linked Agent or Memory Chip inserted into a user's Chipware Socket.",
+        "Cost": 100,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "FBC Brimstone Coating",
+        "Category": "External Body",
+        "Manufacturer": "Dynalar",
+        "Description": null,
+        "Cost": 1000,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "FBC Chameleon Coating",
+        "Category": "External Body",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 1000,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "FBC EMP Coating",
+        "Category": "External Body",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 1000,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "FBC Gemini Sculpt",
+        "Category": "External Body",
+        "Manufacturer": "Raven Microcybernetics",
+        "Description": null,
+        "Cost": 1000,
+        "Humanity": "0 (N/A)"
+    },
+    {
+        "Title": "FBC Integrated Bodyweight Coating",
+        "Category": "External Body",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 1000,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Heavy Subdermal Plating",
+        "Category": "External Body",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 5000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Hidden Holster",
+        "Category": "External Body",
+        "Manufacturer": null,
+        "Description": "Can store weapon capable of concealment inside body.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "OptiShield",
+        "Category": "External Body",
+        "Manufacturer": "Kiroshi",
+        "Description": "Retractable Anti-Dazzle Mirrorshades built into the brow which can be extended or retracted as an Action. While extended, the user is immune to blindness or other effects caused by dangerous flashes of light, like those of a flashbang.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Skin Weave",
+        "Category": "External Body",
+        "Manufacturer": null,
+        "Description": "User's body and head armoured at SP7. Does not stack with worn Armor. Ablates. Recovers 1 SP per day of rest.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Subdermal Armor",
+        "Category": "External Body",
+        "Manufacturer": null,
+        "Description": "User's body and head armoured at SP11. Does not stack with worn Armor. Ablates. Recovers 1 SP per day of rest.",
+        "Cost": 1000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Subdermal Pocket",
+        "Category": "External Body",
+        "Manufacturer": null,
+        "Description": "2 x 4 (5cm x 10cm) storage space just under the skin with RealSkinn zipper.",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Sycust FleshWeave",
+        "Category": "External Body",
+        "Manufacturer": "Sycust",
+        "Description": "Better Skinweave than anything else on the market.",
+        "Cost": 1000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "EMP Threading",
+        "Category": "Fashionware",
+        "Manufacturer": null,
+        "Description": "Thin silver lines that run in circuit-like patterns across the body.",
+        "Cost": 10,
+        "Humanity": "0 (N/A)"
+    },
+    {
+        "Title": "Heuristic Health Monitor",
+        "Category": "Fashionware",
+        "Manufacturer": "Biotechnica",
+        "Description": "Calculates the users vitals as a single statistic referred to as 'HP'.",
+        "Cost": 500,
+        "Humanity": "0 (N/A)"
+    },
+    {
+        "Title": "Kill Display",
+        "Category": "Fashionware",
+        "Manufacturer": null,
+        "Description": "Bright and bold letters illuminated from under the user's skin declares KILLS followed by a number. This count is self-reported using a linked Agent, and goes up to a maximum of 999. Counts as an installation of Light Tattoo fashionware.",
+        "Cost": 100,
+        "Humanity": "0 (N/A)"
+    },
+    {
+        "Title": "Turn-On-Show-Off Nails",
+        "Category": "Fashionware",
+        "Manufacturer": "Lead's Hi-Tech Cosmetic Appliances",
+        "Description": "A full set of 10 programable lighted fingernails allow the user to bring the nail art of their dreams to life. Each purchase comes with a set of light pens for creating new nail art presets. Presets can also be downloaded from CitiNet using a linked Agent. Counts as an installation of Light Tattoo fashionware.",
+        "Cost": 100,
+        "Humanity": "0 (N/A)"
+    },
+    {
+        "Title": "Mood Eyes",
+        "Category": "Fashionware",
+        "Manufacturer": null,
+        "Description": "Colour changing lenses implanted into the users eye. Users eye colour changes based on the largest single characteristic of their current mood as interpreted from brain scans. Faking an emotion scan flawlessly enough to change your eye colour while wearing these is a DV 21 Acting Check. Can be deactivated by the user at any time without an Action. Requires Neural Link.",
+        "Cost": 100,
+        "Humanity": "0 (N/A)"
+    },
+    {
+        "Title": "Copernicus",
+        "Category": "Full Body Conversions",
+        "Manufacturer": "Cybermatrix",
+        "Description": "The ideal FBC body for deep-space exploration and construction.",
+        "Cost": 17300,
+        "Humanity": "52 ([2d6/2 round up] + 15d6)"
+    },
+    {
+        "Title": "Aquarius",
+        "Category": "Full Body Conversions",
+        "Manufacturer": "Dynalar",
+        "Description": "The last word in exploration and life under the sea.",
+        "Cost": 13000,
+        "Humanity": "37 ([2d6/2 round up] + 10d6)"
+    },
+    {
+        "Title": "Brimstone",
+        "Category": "Full Body Conversions",
+        "Manufacturer": "Dynalar",
+        "Description": "Created to defeat humankind’s greatest tool and enemy: fire!",
+        "Cost": 17600,
+        "Humanity": "53 ([1d6/2 round up] + 15d6)"
+    },
+    {
+        "Title": "Dragoon",
+        "Category": "Full Body Conversions",
+        "Manufacturer": "Militech",
+        "Description": "A complete revision of the undeniably effective military FBC that won the 4th Corporate War.",
+        "Cost": 35000,
+        "Humanity": "64 ([3d6/2 round up] + 18d6)"
+    },
+    {
+        "Title": "Eclipse",
+        "Category": "Full Body Conversions",
+        "Manufacturer": "Militech",
+        "Description": "Militech fully denies the existance[sic] of 'killer Borg ninjas.'",
+        "Cost": 29200,
+        "Humanity": "67 ([3d6/2 round up] + 18d6)"
+    },
+    {
+        "Title": "Enforcer",
+        "Category": "Full Body Conversions",
+        "Manufacturer": "Militech",
+        "Description": "Militech understands what it takes to bring criminals to justice – it takes an Enforcer.",
+        "Cost": 16800,
+        "Humanity": "53 ([3d6/2 round up] + 13d6)"
+    },
+    {
+        "Title": "Spyder 2.0",
+        "Category": "Full Body Conversions",
+        "Manufacturer": "Militech",
+        "Description": "The perfect espionage Borg!",
+        "Cost": 24900,
+        "Humanity": "73 ([1d6/2 round up] + 22d6)"
+    },
+    {
+        "Title": "Sheol",
+        "Category": "Full Body Conversions",
+        "Manufacturer": "MoorE Technologies",
+        "Description": "Designed to handle the most hazardous operation you can throw at it.",
+        "Cost": 19600,
+        "Humanity": "32 ([1d6/2 round up] + 9d6)"
+    },
+    {
+        "Title": "Samson",
+        "Category": "Full Body Conversions",
+        "Manufacturer": "NovelTech",
+        "Description": "The toughest industrial Borg on the market. Just one can replace ten hardhats.",
+        "Cost": 20500,
+        "Humanity": "39 ([3d6/2 round up] + 10d6)"
+    },
+    {
+        "Title": "Gemini",
+        "Category": "Full Body Conversions",
+        "Manufacturer": "Raven Microcybernetics",
+        "Description": "All the benefits of being a Full Body Conversion, none of the social downside!",
+        "Cost": 10200,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Wiseman",
+        "Category": "Full Body Conversions",
+        "Manufacturer": "Raven Microcybernetics",
+        "Description": "The holiday gift your Dweller deserves! Kills enemy Netrunners dead.",
+        "Cost": 27480,
+        "Humanity": "52 ([2d6/2 round up] + 15d6)"
+    },
+    {
+        "Title": "Alpha Class",
+        "Category": "Full Body Conversions",
+        "Manufacturer": "Rocklin Augmentics",
+        "Description": "An attractive yet affordable entry-level model.",
+        "Cost": 9900,
+        "Humanity": "21 (6d6)"
+    },
+    {
+        "Title": "Kildare",
+        "Category": "Full Body Conversions",
+        "Manufacturer": "Trauma Team",
+        "Description": "Trauma Team's secret weapon in their fight for the health and wellbeing of their patients.",
+        "Cost": 12200,
+        "Humanity": "39 ([3d6/2 round up] + 10d6)"
+    },
+    {
+        "Title": "Appetite Controller",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "AudioVox",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": "Vocal synthesizer. User adds +2 to Acting and Play Instrument Skill when singing.",
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "AutoInjector",
+        "Category": "Internal Body",
+        "Manufacturer": "Bodyweight Life Preservation Systems",
+        "Description": "Injects a dose of Drugs upon command or automatically due to preset condition.",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Contraceptive Implant",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": "Prevents undesired pregnancy.",
+        "Cost": 10,
+        "Humanity": "0 (N/A)"
+    },
+    {
+        "Title": "Cyberskull",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 5000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Cybersnake",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": "Esophagus mounted Very Heavy Melee Weapon. Can be concealed.",
+        "Cost": 1000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Enhanced Antibodies",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": "After stabilization, user heals BODY x 2 for each day spent resting.",
+        "Cost": 500,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Firebreather",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 1000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Gills",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": "User can breathe underwater.",
+        "Cost": 1000,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Grafted Muscle and Bone Lace",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": "Increases BODY by 2. The increase changes HP, Wound Threshold, and Death Save. Cannot raise BODY above 10.",
+        "Cost": 1000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Cyberliver",
+        "Category": "Internal Body",
+        "Manufacturer": "Hammered Industries",
+        "Description": null,
+        "Cost": 100,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Independent Air Supply",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": "Provides 30 minutes of oxygen. Takes 1 hour to refill from ambient atmosphere.",
+        "Cost": 1000,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "Internal Body Cyberware Hardening Shielding",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": "Protect your Internal Body Cyberware against EMP effects.",
+        "Cost": 1000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Internal Hydraulics Upgrade",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 1000,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Internal Hydraulics Upgrade, Perfected",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 20000,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Internal Hydraulics Upgrade, Tuned",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 5000,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Nasal Filters",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": "User immune to effects of toxic gases, fumes, and similar dangers.",
+        "Cost": 100,
+        "Humanity": "2 (1d6/2)"
+    },
+    {
+        "Title": "NeuTongue",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": "Cybernetic tongue alters the user's sense of taste. Using a linked Agent, virtual seasoning can be added to food. Can be deactivated by the user at any time without an action, eliminating the user's sense of taste.",
+        "Cost": 100,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "RacerBracer",
+        "Category": "Internal Body",
+        "Manufacturer": "Rocklin Augmentics",
+        "Description": "Immunity to Whiplash Critical Injury.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Radar / Sonar Implant",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": "Scans terrain within 50m/yds. Cannot scan through cover.",
+        "Cost": 1000,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Toxin Binders",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": "Adds +2 to Resist Torture/Drugs.",
+        "Cost": 100,
+        "Humanity": "7 (1d6)/2"
+    },
+    {
+        "Title": "Trauma Response Nanomatrix",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": "Restore all lost Skin Weave or Subdermal Armor SP once/day.",
+        "Cost": 1000,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Vampyres",
+        "Category": "Internal Body",
+        "Manufacturer": null,
+        "Description": "Excellent Quality Light Melee Weapon implanted in mouth. Can be concealed. User can add Poison or Biotoxin.",
+        "Cost": 500,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Animal Behaviour Chip",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "+4 to Acting Checks to impersonate an animal",
+        "Cost": 1000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Braindance Recorder",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "Records user's experiences to memory chip or external device. Requires Neural Link.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Budget Chipware Socket",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "A cheap Chipware Socket",
+        "Cost": 100,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Chemical Analyser",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "Chipware. Tests substance for precise chemical composition and compares to a database. Requires Chipware Socket.",
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Chipware Socket",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "A single socket installed in back of the neck. Required to use Chipware. Requires Neural Link.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "DeathTrance",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "Appear dead without being dead. Might add a pale glow to your skin permanently.",
+        "Cost": 500,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Explicit Memory Stimulator",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "+2 to Concentration Checks made to remember information",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Interface Plugs",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "Plugs in wrist or head that allow connection to machines. Requires Neural Link.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Kerenzikov",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "User adds +2 to Initiative. Only 1 piece of Speedware can be installed at a time. Requires Neural Link.",
+        "Cost": 500,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Memory Chip",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "Data storage. User's cyberware can store or access data on it.",
+        "Cost": 10,
+        "Humanity": "0 (N/A)"
+    },
+    {
+        "Title": "Neural Link",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "Wired artificial nervous system. Required to use Neuralware and Subdermal Grip. Has 5 Option Slots.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Neuroport",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": null,
+        "Cost": 1000,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Olfactory Boost",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "Chipware. User can use Tracking Skill to track via scent. Requires Chipware Socket.",
+        "Cost": 100,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Pain Editor",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "Chipware. User ignores penalties due to being seriously wounded. Requires Chipware Socket.",
+        "Cost": 1000,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "PoserChip",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "Don't just look like Elvis. Be Elvis. Or anyone else you desire to duplicate.",
+        "Cost": "500/1000",
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "MicroWaldo",
+        "Category": "Neuralware",
+        "Manufacturer": "Raven Microcybernetics",
+        "Description": "A spider-like collection of probes turn your hand into a monster of surgical precision.",
+        "Cost": 1000,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Reflex Co-Processor",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "Dodge bullets without REF 8.",
+        "Cost": 500,
+        "Humanity": "14 (4d6)"
+    },
+    {
+        "Title": "Sandevistan",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "When activated as an Action adds +3 to Initiative for one minute. Has 1 hour cool down period. Only 1 piece of Speedware can be installed at a time. Requires Neural Link.",
+        "Cost": 500,
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Skill Chip",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "Chipware. User has specific Skill at Level 3 unless Skill is already 3+. Skill Chips for (x2) cost Skills cost more. Requires Chipware Socket.",
+        "Cost": "500/1000",
+        "Humanity": "7 (2d6)"
+    },
+    {
+        "Title": "Subdermal Grip",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "Cyberarm Option. Neuralware Option. Subdermal plate under the palm allows user to make use of Smartguns. A cost-effective alternative to Interface Plugs. Can be installed as the only piece of Cyberware in a meat arm. Requires Neural Link and takes up a Neuralware Option Slot.",
+        "Cost": 100,
+        "Humanity": "3 (1d6)"
+    },
+    {
+        "Title": "Tactile Boost",
+        "Category": "Neuralware",
+        "Manufacturer": null,
+        "Description": "Chipware. User can detect motion within 20m/yd by placing hand on surface. Requires Chipware Socket.",
+        "Cost": 100,
+        "Humanity": "7 (2d6)"
+    }
+]

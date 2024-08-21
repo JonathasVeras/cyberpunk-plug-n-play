@@ -5,11 +5,15 @@ import { Weapon } from '../../../../interfaces/IWeapon';
 import WeaponsListSheet from '../../../../components/WeaponsList/WeaponsListSheet';
 import weaponsData from '../../../../jsons/Weapons-Cyberpunk.json';
 import ActionsSidebar from '../../../../components/ActionsSidebar/ActionsSidebar';
+import { ICyberware } from '../../../../interfaces/ICyberware';
+import cyberwareData from '../../../../jsons/Cyberwares.json';
+import CyberwareListSheet from '../../../../components/CyberwareList/CyberwareListSheet';
 
 const Character: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const [character, setCharacter] = useState<ICharacterSheet | null>(null);
     const [weaponList, setWeaponList] = useState<Weapon[]>([]);
+    const [cyberwareList, setCyberwareList] = useState<ICyberware[]>([]);
 
     useEffect(() => {
         const formattedData: Weapon[] = weaponsData.map((weapon) => ({
@@ -29,8 +33,17 @@ const Character: React.FC = () => {
             AdditionalInfo: weapon["Additional Info"],
             Description: weapon.Description,
         }));
+        const formattedDataCyberware: ICyberware[] = cyberwareData.map((cyberware) => ({
+            Title: cyberware.Title,
+            Category: cyberware.Category,
+            Manufacturer: cyberware.Manufacturer,
+            Description: cyberware.Description,
+            Cost: Number(cyberware.Cost)
+        }))
 
         setWeaponList(formattedData);
+        setCyberwareList(formattedDataCyberware);
+        console.log(formattedDataCyberware)
     }, []);
 
     useEffect(() => {
@@ -77,6 +90,50 @@ const Character: React.FC = () => {
             const newWeapons = [...character.weapons];
             newWeapons.splice(index, 1);
             const updatedCharacter = { ...character, weapons: newWeapons };
+            setCharacter(updatedCharacter);
+
+            if (id?.startsWith('local-')) {
+                const localIndex = parseInt(id.replace('local-', ''), 10);
+                const storedSheets = localStorage.getItem('CharacterSheetsOffline');
+                if (storedSheets) {
+                    const sheets = JSON.parse(storedSheets) as ICharacterSheet[];
+                    sheets[localIndex] = updatedCharacter;
+                    localStorage.setItem('CharacterSheetsOffline', JSON.stringify(sheets));
+                }
+            }
+        }
+    };
+
+    const handleAddCyberware = (cyberware: ICyberware) => {
+        if (character) {
+            const newCyberware: ICyberware = {
+                Title: cyberware.Title || null,
+                Category: cyberware.Category || null,
+                Manufacturer: cyberware.Manufacturer || null,
+                Description: cyberware.Description || null,
+                Cost: Number(cyberware.Cost) || null,
+            }
+
+            const updatedCharacter = { ...character, cyberware: [...character.cyberware, newCyberware] };
+            setCharacter(updatedCharacter);
+
+            if (id?.startsWith('local-')) {
+                const localIndex = parseInt(id.replace('local-', ''), 10);
+                const storedSheets = localStorage.getItem('CharacterSheetsOffline');
+                if (storedSheets) {
+                    const sheets = JSON.parse(storedSheets) as ICharacterSheet[];
+                    sheets[localIndex] = updatedCharacter;
+                    localStorage.setItem('CharacterSheetsOffline', JSON.stringify(sheets));
+                }
+            }
+        }
+    }
+
+    const handleRemoveCyberware = (index: number) => {
+        if (character) {
+            const newCyberwares = [...character.cyberware];
+            newCyberwares.splice(index, 1);
+            const updatedCharacter = { ...character, cyberware: newCyberwares };
             setCharacter(updatedCharacter);
 
             if (id?.startsWith('local-')) {
@@ -197,7 +254,6 @@ const Character: React.FC = () => {
                         onRemoveWeapon={handleRemoveWeapon}
                         availableWeapons={weaponList}
                     />
-
                     <div className="bg-gray-800/70 p-4 rounded-lg">
                         <h2 className="text-xl font-semibold mb-4">Items</h2>
                         <div className="space-y-2">
@@ -210,17 +266,12 @@ const Character: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="bg-gray-800/70 p-4 rounded-lg">
-                        <h2 className="text-xl font-semibold mb-4">Cyberware</h2>
-                        <div className="space-y-2">
-                            {/* Example of cyberware */}
-                            <div className="flex justify-between bg-gray-900 p-2 rounded-lg">
-                                <span>Cyberware Name</span>
-                                <span>Effect: Enhanced Strength</span>
-                            </div>
-                            {/* Additional cyberware */}
-                        </div>
-                    </div>
+                    <CyberwareListSheet
+                        cyberwares={character.cyberware}
+                        onAddCyberware={handleAddCyberware}
+                        onRemoveCyberware={handleRemoveCyberware}
+                        availableCyberware={cyberwareList}
+                    />
 
                     <div className="bg-gray-800/70 p-4 rounded-lg">
                         <h2 className="text-xl font-semibold mb-4">Skills</h2>

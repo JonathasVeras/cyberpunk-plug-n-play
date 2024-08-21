@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../../contexts/AuthContext";
+import { ICharacterSheet } from "../../../../interfaces/characterSheet";
 
 const NewCharacter3: React.FC = () => {
   const { isAuthenticated, isOnline } = useAuth();
@@ -21,7 +22,7 @@ const NewCharacter3: React.FC = () => {
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
-    setFicha((prevFicha: any) => ({
+    setFicha((prevFicha: ICharacterSheet) => ({
       ...prevFicha,
       [name]: value,
     }));
