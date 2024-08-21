@@ -160,7 +160,7 @@ const Characters: React.FC = () => {
                 Delete
               </button>
               <Link
-                to={`/characters/${index}`}
+                to={`/characters/${sheet.name}`}
                 className="block mt-2 text-blue-400 underline"
               >
                 View Details
