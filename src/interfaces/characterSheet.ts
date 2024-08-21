@@ -1,7 +1,7 @@
 import { ICyberware } from "./ICyberware";
 import { Weapon } from "./IWeapon";
 
-interface IAttributes {
+export interface IAttributes {
   acceptance: number;
   agility: number;
   selfControl: number;
@@ -26,6 +26,7 @@ interface IAttributes {
   wisdom: number;
   seduction: number;
   luck: number;
+  invasion: number;
 }
 
 export interface ICharacterSheet {
