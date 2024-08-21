@@ -27,6 +27,8 @@ export interface IAttributes {
   seduction: number;
   luck: number;
   invasion: number;
+  block: number,
+  fight: number,
 }
 
 export interface ICharacterSheet {

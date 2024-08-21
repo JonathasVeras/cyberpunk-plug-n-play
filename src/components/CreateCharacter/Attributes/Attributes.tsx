@@ -8,6 +8,19 @@ interface AttributesProps {
     setStats: (stats: ICharacterStats) => void;
 }
 
+const MIN_ATTRIBUTE_VALUE = 2;
+const MAX_ATTRIBUTE_VALUE = 10;
+const TOTAL_POINTS = 72;
+
+const attributeCategories = {
+    Physical: ["agility", "body", "strength", "endurance"],
+    Combat: ["block", "fight", "dodge", "focus"],
+    Mental: ["selfControl", "dexterity", "intelligence", "wisdom"],
+    Social: ["empathy", "intimidation", "leadership", "seduction"],
+    Techno: ["acceptance", "humanity", "invasion", "protection"],
+    Occult: ["destiny", "faith", "narrative", "luck"],
+};
+
 const Attributes: React.FC<AttributesProps> = ({ attributes, setAttributes, setStats }) => {
     const [tempValues, setTempValues] = useState<IAttributes>(attributes);
 
@@ -16,15 +29,7 @@ const Attributes: React.FC<AttributesProps> = ({ attributes, setAttributes, setS
     }, [attributes]);
 
     useEffect(() => {
-        const {
-            endurance,
-            strength,
-            selfControl,
-            wisdom,
-            dexterity,
-            agility,
-            humanity,
-        } = tempValues;
+        const { endurance, strength, selfControl, wisdom, dexterity, agility, humanity } = tempValues;
 
         setStats({
             maxHealth: endurance + strength,
@@ -40,38 +45,24 @@ const Attributes: React.FC<AttributesProps> = ({ attributes, setAttributes, setS
             woundedAndOverloadedPenalty: (agility / 2) * 1,
             damageReduction: endurance / 2,
         });
-    }, [tempValues]);
+    }, [tempValues, setStats]);
 
     const handleAttributeChange = (name: keyof IAttributes, value: number) => {
-        setTempValues((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
-    };
+        const validatedValue = Math.min(Math.max(value, MIN_ATTRIBUTE_VALUE), MAX_ATTRIBUTE_VALUE);
 
-    const handleBlur = (name: keyof IAttributes) => {
-        const validatedValue = validateValue(tempValues[name]);
-        const newAttributes = {
-            ...attributes,
+        const updatedAttributes = {
+            ...tempValues,
             [name]: validatedValue,
         };
-        setAttributes(newAttributes);
+
+        setTempValues(updatedAttributes);
+        setAttributes(updatedAttributes); // Aqui atualiza diretamente com o novo estado.
     };
 
-    const validateValue = (value: number): number => {
-        if (value < 2) {
-            alert("Only values from 2 to 10 are allowed.");
-            return 2;
-        }
-        if (value > 10) {
-            alert("Only values from 2 to 10 are allowed.");
-            return 10;
-        }
-        return value;
-    };
+    const remainingPoints = TOTAL_POINTS - Object.values(tempValues).reduce((sum, val) => sum + val, 0);
 
     return (
-        < div className="bg-[#220425] text-blue-punk border-blue-punk border-3 p-6 rounded-lg w-full" >
+        <div className="bg-[#220425] text-blue-punk border-blue-punk border-3 p-6 rounded-lg w-full">
             <h3 className="text-3xl font-bold text-center mb-4">Attributes</h3>
             <p className="text-xl text-pinkish-red mb-2">
                 Each of the following 6 attributes will have 4 sub-attributes. You can
@@ -88,26 +79,18 @@ const Attributes: React.FC<AttributesProps> = ({ attributes, setAttributes, setS
                 <input
                     type="text"
                     className="bg-black text-blue-punk w-20 text-center"
-                    value={72 - Object.values(tempValues).reduce((sum, val) => sum + val, 0)}
+                    value={remainingPoints}
                     readOnly
                 />
             </div>
             <div className="flex flex-row space-y-5">
-                {/* Row 1: Physical, Combat, Mental */}
-                {["Physical", "Combat", "Mental", "Social", "Techno", "Occult"].map(category => (
+                {Object.entries(attributeCategories).map(([category, subAttributes]) => (
                     <div key={category} className="flex-1">
                         <h4 className="font-bold text-xl border-[#05b8e9] border-3 rounded-md text-center mb-2 bg-[#220425] p-2">
                             {category}
                         </h4>
                         <div className="flex flex-col space-y-2">
-                            {[
-                                ["agility", "body", "strength", "endurance"],
-                                ["block", "fight", "dodge", "focus"],
-                                ["selfControl", "dexterity", "intelligence", "wisdom"],
-                                ["empathy", "intimidation", "leadership", "seduction"],
-                                ["acceptance", "humanity", "invasion", "protection"],
-                                ["destiny", "faith", "narrative", "luck"]
-                            ][["Physical", "Combat", "Mental", "Social", "Techno", "Occult"].indexOf(category)].map(subAttr => (
+                            {subAttributes.map((subAttr) => (
                                 <div key={subAttr} className="flex items-center">
                                     <label className="text-lg mr-2">
                                         {subAttr.charAt(0).toUpperCase() + subAttr.slice(1)}:
@@ -115,16 +98,10 @@ const Attributes: React.FC<AttributesProps> = ({ attributes, setAttributes, setS
                                     <input
                                         type="number"
                                         className="bg-black text-blue-punk w-20"
-                                        value={tempValues[subAttr as keyof IAttributes]}
-                                        onChange={(e) =>
-                                            handleAttributeChange(
-                                                subAttr as keyof IAttributes,
-                                                parseInt(e.target.value, 10) || 0
-                                            )
-                                        }
-                                        onBlur={() => handleBlur(subAttr as keyof IAttributes)}
-                                        min={2}
-                                        max={10}
+                                        value={tempValues[subAttr as keyof IAttributes] ? (tempValues[subAttr as keyof IAttributes]) : 2}
+                                        onChange={(e) => handleAttributeChange(subAttr as keyof IAttributes, parseInt(e.target.value, 10))}
+                                        min={MIN_ATTRIBUTE_VALUE}
+                                        max={MAX_ATTRIBUTE_VALUE}
                                     />
                                 </div>
                             ))}
@@ -132,7 +109,7 @@ const Attributes: React.FC<AttributesProps> = ({ attributes, setAttributes, setS
                     </div>
                 ))}
             </div>
-        </div >
+        </div>
     );
 };
 

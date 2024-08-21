@@ -49,6 +49,8 @@ const CriarFicha: React.FC = () => {
     seduction: 2,
     luck: 2,
     invasion: 2,
+    block: 2,
+    fight: 2,
   });
   const [stats, setStats] = useState<ICharacterStats>({
     maxHealth: 0,
@@ -97,7 +99,7 @@ const CriarFicha: React.FC = () => {
 
 
   const handleSair = () => {
-    navigate("/characters");
+    setStep(step - 1)
   };
 
   const handleContinuar = () => {
@@ -170,7 +172,7 @@ const CriarFicha: React.FC = () => {
             onClick={handleSair}
             className="bg-red-600 text-black font-bold py-2 px-4 rounded-lg"
           >
-            Sair
+            Voltar
           </button>
           <button
             type="button"
