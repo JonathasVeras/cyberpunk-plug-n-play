@@ -8,12 +8,19 @@ import ActionsSidebar from '../../../../components/ActionsSidebar/ActionsSidebar
 import { ICyberware } from '../../../../interfaces/ICyberware';
 import cyberwareData from '../../../../jsons/Cyberwares.json';
 import CyberwareListSheet from '../../../../components/CyberwareList/CyberwareListSheet';
+import { FaDiceD20, FaDiceD6 } from 'react-icons/fa'; // Import icons for dice
+import FaDiceD8 from '../../../../../public/diceIcon/d8icon.png'
+import FaDiceD10 from '../../../../../public/diceIcon/d10icon.png'
+import FaDiceD4 from '../../../../../public/diceIcon/d4icon.png'
+import FaDiceD12 from '../../../../../public/diceIcon/d12icon.png'
 
 const Character: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const [character, setCharacter] = useState<ICharacterSheet | null>(null);
     const [weaponList, setWeaponList] = useState<Weapon[]>([]);
     const [cyberwareList, setCyberwareList] = useState<ICyberware[]>([]);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [diceResult, setDiceResult] = useState<number | null>(null);
 
     useEffect(() => {
         const formattedData: Weapon[] = weaponsData.map((weapon) => ({
@@ -39,7 +46,7 @@ const Character: React.FC = () => {
             Manufacturer: cyberware.Manufacturer,
             Description: cyberware.Description,
             Cost: Number(cyberware.Cost)
-        }))
+        }));
 
         setWeaponList(formattedData);
         setCyberwareList(formattedDataCyberware);
@@ -111,7 +118,7 @@ const Character: React.FC = () => {
                 Manufacturer: cyberware.Manufacturer || null,
                 Description: cyberware.Description || null,
                 Cost: Number(cyberware.Cost) || null,
-            }
+            };
 
             const updatedCharacter = { ...character, cyberware: [...character.cyberware, newCyberware] };
             setCharacter(updatedCharacter);
@@ -126,7 +133,7 @@ const Character: React.FC = () => {
                 }
             }
         }
-    }
+    };
 
     const handleRemoveCyberware = (index: number) => {
         if (character) {
@@ -160,6 +167,15 @@ const Character: React.FC = () => {
             const storedSheets: any = [];
             setCharacter(storedSheets[parseInt(id || '0', 10)]);
         }
+    };
+
+    const rollDice = (sides: number) => {
+        return Math.floor(Math.random() * sides) + 1;
+    };
+
+    const handleDiceClick = (sides: number) => {
+        setDiceResult(rollDice(sides));
+        setDropdownOpen(false);
     };
 
     if (!character) {
@@ -285,8 +301,48 @@ const Character: React.FC = () => {
                     </div>
                 </div>
             </div>
-            {/* Actions Sidebar */}
+
+            {/* Sidebar with Actions */}
             <ActionsSidebar weapons={character.weapons} />
+
+            {/* Dice Button and Dropdown */}
+            <div className="fixed bottom-4 right-4">
+                <button
+                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                    className="bg-yellow-500 text-white p-4 rounded-full shadow-lg flex items-center justify-center"
+                >
+                    <FaDiceD20 size={24} color={'white'} />
+                </button>
+                {dropdownOpen && (
+                    <div className="mt-2 bg-white text-black rounded-lg shadow-lg w-48">
+                        <ul>
+                            <li onClick={() => handleDiceClick(4)} className="sm:flex sm:gap-2 p-2 hover:bg-gray-200 cursor-pointe">
+                                <img src={FaDiceD4} className='w-[2rem]'></img> d4
+                            </li>
+                            <li onClick={() => handleDiceClick(6)} className="p-2 hover:bg-gray-200 cursor-pointer">
+                                <FaDiceD6 className="inline-block mr-2" size={35} /> d6
+                            </li>
+                            <li onClick={() => handleDiceClick(8)} className="sm:flex sm:gap-2 p-2 hover:bg-gray-200 cursor-pointer">
+                                <img src={FaDiceD8} className='w-[2rem]'></img> d8
+                            </li>
+                            <li onClick={() => handleDiceClick(10)} className="sm:flex sm:gap-2 p-2 hover:bg-gray-200 cursor-pointe">
+                                <img src={FaDiceD10} className='w-[2rem]'></img> d10
+                            </li>
+                            <li onClick={() => handleDiceClick(12)} className="sm:flex sm:gap-2 p-2 hover:bg-gray-200 cursor-pointe">
+                                <img src={FaDiceD12} className='w-[2rem]'></img> d12
+                            </li>
+                            <li onClick={() => handleDiceClick(20)} className="p-2 hover:bg-gray-200 cursor-pointer">
+                                <FaDiceD20 className="inline-block mr-2" size={35} /> d20
+                            </li>
+                        </ul>
+                    </div>
+                )}
+                {diceResult !== null && (
+                    <div className="mt-2 bg-black text-white font-bold p-2 rounded-lg">
+                        <p>Result: {diceResult}</p>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
