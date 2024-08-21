@@ -53,121 +53,193 @@ const Character: React.FC = () => {
     }, []);
 
     useEffect(() => {
-        fetchCharacter();
+      fetchCharacter();
+      console.log("ID é: " + id);
     }, [id]);
 
     const handleAddWeapon = (weapon: Weapon) => {
-        if (character) {
-            const newWeapon: Weapon = {
-                Category: weapon.Category || null,
-                Manufacturer: weapon.Manufacturer || null,
-                Name: weapon.Name || '',
-                WeaponSkill: weapon.WeaponSkill || null,
-                Damage: weapon.Damage || '',
-                AccuracyBonus: weapon.AccuracyBonus || null,
-                Magazine: weapon.Magazine || null,
-                RateOfFire: weapon.RateOfFire || null,
-                HandsRequired: weapon.HandsRequired || null,
-                Availability: weapon.Availability || null,
-                Concealment: weapon.Concealment || null,
-                Quality: weapon.Quality || null,
-                Cost: weapon.Cost || null,
-                AdditionalInfo: weapon.AdditionalInfo || null,
-                Description: weapon.Description || null,
-            };
+      if (character) {
+        const newWeapon: Weapon = {
+          Category: weapon.Category || null,
+          Manufacturer: weapon.Manufacturer || null,
+          Name: weapon.Name || "",
+          WeaponSkill: weapon.WeaponSkill || null,
+          Damage: weapon.Damage || "",
+          AccuracyBonus: weapon.AccuracyBonus || null,
+          Magazine: weapon.Magazine || null,
+          RateOfFire: weapon.RateOfFire || null,
+          HandsRequired: weapon.HandsRequired || null,
+          Availability: weapon.Availability || null,
+          Concealment: weapon.Concealment || null,
+          Quality: weapon.Quality || null,
+          Cost: weapon.Cost || null,
+          AdditionalInfo: weapon.AdditionalInfo || null,
+          Description: weapon.Description || null,
+        };
 
-            const updatedCharacter = { ...character, weapons: [...character.weapons, newWeapon] };
-            setCharacter(updatedCharacter);
+        const updatedCharacter = {
+          ...character,
+          weapons: [...character.weapons, newWeapon],
+        };
+        setCharacter(updatedCharacter);
 
-            if (id?.startsWith('local-')) {
-                const localIndex = parseInt(id.replace('local-', ''), 10);
-                const storedSheets = localStorage.getItem('CharacterSheetsOffline');
-                if (storedSheets) {
-                    const sheets = JSON.parse(storedSheets) as ICharacterSheet[];
-                    sheets[localIndex] = updatedCharacter;
-                    localStorage.setItem('CharacterSheetsOffline', JSON.stringify(sheets));
-                }
-            }
+        if (id?.startsWith("local-")) {
+          const localIndex = parseInt(id.replace("local-", ""), 10);
+          const storedSheets = localStorage.getItem("CharacterSheetsOffline");
+          if (storedSheets) {
+            const sheets = JSON.parse(storedSheets) as ICharacterSheet[];
+            sheets[localIndex] = updatedCharacter;
+            localStorage.setItem(
+              "CharacterSheetsOffline",
+              JSON.stringify(sheets)
+            );
+          }
+        } else {
+          updateFichaNoFirebase(id, updatedCharacter);
         }
+      }
     };
 
     const handleRemoveWeapon = (index: number) => {
-        if (character) {
-            const newWeapons = [...character.weapons];
-            newWeapons.splice(index, 1);
-            const updatedCharacter = { ...character, weapons: newWeapons };
-            setCharacter(updatedCharacter);
+      if (character) {
+        const newWeapons = [...character.weapons];
+        newWeapons.splice(index, 1);
+        const updatedCharacter = { ...character, weapons: newWeapons };
+        setCharacter(updatedCharacter);
 
-            if (id?.startsWith('local-')) {
-                const localIndex = parseInt(id.replace('local-', ''), 10);
-                const storedSheets = localStorage.getItem('CharacterSheetsOffline');
-                if (storedSheets) {
-                    const sheets = JSON.parse(storedSheets) as ICharacterSheet[];
-                    sheets[localIndex] = updatedCharacter;
-                    localStorage.setItem('CharacterSheetsOffline', JSON.stringify(sheets));
-                }
-            }
+        if (id?.startsWith("local-")) {
+          const localIndex = parseInt(id.replace("local-", ""), 10);
+          const storedSheets = localStorage.getItem("CharacterSheetsOffline");
+          if (storedSheets) {
+            const sheets = JSON.parse(storedSheets) as ICharacterSheet[];
+            sheets[localIndex] = updatedCharacter;
+            localStorage.setItem(
+              "CharacterSheetsOffline",
+              JSON.stringify(sheets)
+            );
+          }
+        } else {
+          updateFichaNoFirebase(id, updatedCharacter);
         }
+      }
     };
 
     const handleAddCyberware = (cyberware: ICyberware) => {
-        if (character) {
-            const newCyberware: ICyberware = {
-                Title: cyberware.Title || null,
-                Category: cyberware.Category || null,
-                Manufacturer: cyberware.Manufacturer || null,
-                Description: cyberware.Description || null,
-                Cost: Number(cyberware.Cost) || null,
-            };
+      if (character) {
+        const newCyberware: ICyberware = {
+          Title: cyberware.Title || null,
+          Category: cyberware.Category || null,
+          Manufacturer: cyberware.Manufacturer || null,
+          Description: cyberware.Description || null,
+          Cost: Number(cyberware.Cost) || null,
+        };
 
-            const updatedCharacter = { ...character, cyberware: [...character.cyberware, newCyberware] };
-            setCharacter(updatedCharacter);
+        const updatedCharacter = {
+          ...character,
+          cyberware: [...character.cyberware, newCyberware],
+        };
+        setCharacter(updatedCharacter);
 
-            if (id?.startsWith('local-')) {
-                const localIndex = parseInt(id.replace('local-', ''), 10);
-                const storedSheets = localStorage.getItem('CharacterSheetsOffline');
-                if (storedSheets) {
-                    const sheets = JSON.parse(storedSheets) as ICharacterSheet[];
-                    sheets[localIndex] = updatedCharacter;
-                    localStorage.setItem('CharacterSheetsOffline', JSON.stringify(sheets));
-                }
-            }
+        if (id?.startsWith("local-")) {
+          const localIndex = parseInt(id.replace("local-", ""), 10);
+          const storedSheets = localStorage.getItem("CharacterSheetsOffline");
+          if (storedSheets) {
+            const sheets = JSON.parse(storedSheets) as ICharacterSheet[];
+            sheets[localIndex] = updatedCharacter;
+            localStorage.setItem(
+              "CharacterSheetsOffline",
+              JSON.stringify(sheets)
+            );
+          }
+        } else {
+          updateFichaNoFirebase(id, updatedCharacter);
         }
+      }
     };
 
     const handleRemoveCyberware = (index: number) => {
-        if (character) {
-            const newCyberwares = [...character.cyberware];
-            newCyberwares.splice(index, 1);
-            const updatedCharacter = { ...character, cyberware: newCyberwares };
-            setCharacter(updatedCharacter);
+      if (character) {
+        const newCyberwares = [...character.cyberware];
+        newCyberwares.splice(index, 1);
+        const updatedCharacter = { ...character, cyberware: newCyberwares };
+        setCharacter(updatedCharacter);
 
-            if (id?.startsWith('local-')) {
-                const localIndex = parseInt(id.replace('local-', ''), 10);
-                const storedSheets = localStorage.getItem('CharacterSheetsOffline');
-                if (storedSheets) {
-                    const sheets = JSON.parse(storedSheets) as ICharacterSheet[];
-                    sheets[localIndex] = updatedCharacter;
-                    localStorage.setItem('CharacterSheetsOffline', JSON.stringify(sheets));
-                }
-            }
-        }
-    };
-
-    const fetchCharacter = () => {
-        if (id?.startsWith('local-')) {
-            const localIndex = parseInt(id.replace('local-', ''), 10);
-            const storedSheets = localStorage.getItem('CharacterSheetsOffline');
-            if (storedSheets) {
-                const sheets = JSON.parse(storedSheets) as ICharacterSheet[];
-                setCharacter(sheets[localIndex]);
-            }
+        if (id?.startsWith("local-")) {
+          const localIndex = parseInt(id.replace("local-", ""), 10);
+          const storedSheets = localStorage.getItem("CharacterSheetsOffline");
+          if (storedSheets) {
+            const sheets = JSON.parse(storedSheets) as ICharacterSheet[];
+            sheets[localIndex] = updatedCharacter;
+            localStorage.setItem(
+              "CharacterSheetsOffline",
+              JSON.stringify(sheets)
+            );
+          }
         } else {
-            // TO DO - Fazer a lógica para fichas online
-            const storedSheets: any = [];
-            setCharacter(storedSheets[parseInt(id || '0', 10)]);
+          updateFichaNoFirebase(id, updatedCharacter);
         }
+      }
     };
+
+    const updateFichaNoFirebase = (
+      id: string | undefined,
+      updatedCharacter: ICharacterSheet | null
+    ) => {
+      const url = `https://cyberpunk-react-default-rtdb.firebaseio.com/fichas/${id}.json`;
+      const options = {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedCharacter),
+      };
+
+      fetch(url, options)
+        .then((response) => {
+          if (!response.ok) throw new Error("Erro na requisição");
+          return response.json();
+        })
+        .then(() => {
+          console.log(id + " atualizada com sucesso");
+        })
+        .catch((error) => {
+          console.error("Erro ao enviar os dados:", error);
+        });
+    };
+
+    const fetchCharacter = async () => {
+      if (id?.startsWith("local-")) {
+        const localIndex = parseInt(id.replace("local-", ""), 10);
+        const storedSheets = localStorage.getItem("CharacterSheetsOffline");
+        if (storedSheets) {
+          const sheets = JSON.parse(storedSheets) as ICharacterSheet[];
+          setCharacter(sheets[localIndex]);
+        }
+      } else {
+        try {
+          const response = await fetch(
+            `https://cyberpunk-react-default-rtdb.firebaseio.com/fichas/${id}.json`
+          );
+          if (!response.ok) {
+            throw new Error("Erro ao buscar ficha online.");
+          }
+          const data = await response.json();
+          if (data) {
+            // Inserir manualmente os campos faltantes do firebase
+            if (!data.weapons) {
+              data.weapons = [];
+            }
+            if (!data.cyberware) {
+              data.cyberware = [];
+            }
+            setCharacter(data);
+          } else {
+            console.error("Ficha online não encontrada.");
+          }
+          console.log("Ficha de " + id + " acessada com sucesso");
+        } catch (error) {
+          console.error("Erro ao buscar ficha online:", error);
+        }
+      }
+    };    
 
     const rollDice = (sides: number) => {
         return Math.floor(Math.random() * sides) + 1;
