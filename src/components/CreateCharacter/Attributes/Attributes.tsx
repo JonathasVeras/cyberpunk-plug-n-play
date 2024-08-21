@@ -56,7 +56,7 @@ const Attributes: React.FC<AttributesProps> = ({ attributes, setAttributes, setS
         };
 
         setTempValues(updatedAttributes);
-        setAttributes(updatedAttributes); // Aqui atualiza diretamente com o novo estado.
+        setAttributes(updatedAttributes);
     };
 
     const remainingPoints = TOTAL_POINTS - Object.values(tempValues).reduce((sum, val) => sum + val, 0);

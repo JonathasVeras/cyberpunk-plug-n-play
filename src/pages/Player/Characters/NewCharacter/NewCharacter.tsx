@@ -172,14 +172,14 @@ const CriarFicha: React.FC = () => {
             onClick={handleSair}
             className="bg-red-600 text-black font-bold py-2 px-4 rounded-lg"
           >
-            Voltar
+            Step back
           </button>
           <button
             type="button"
             onClick={handleContinuar}
             className="bg-yellow-400 text-black font-bold py-2 px-4 rounded-lg"
           >
-            Continuar
+            Continue
           </button>
         </div>
       </div>
