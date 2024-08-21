@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import characterPic from "../../../../public/characterPic.jpg"; // Certifique-se de que o caminho está correto
 
 interface CharacterDetails {
-  age: number;
+  age: any;
 }
 
 interface CharacterData {
@@ -13,8 +13,8 @@ interface CharacterData {
 }
 
 interface SimpleCharacter {
-  name: string;
-  age: number;
+  name: string | null;
+  age: any;
 }
 
 const Characters: React.FC = () => {
@@ -37,10 +37,19 @@ const Characters: React.FC = () => {
         const response = await fetch(
           "https://cyberpunk-react-default-rtdb.firebaseio.com/fichas.json"
         );
-        const data: CharacterData = await response.json();
+        const data: any = await response.json();
 
-        const sheetsArray: SimpleCharacter[] = Object.entries(data).map(
-          ([name, details]) => ({
+        const userSheets = Object.keys(data)
+          .filter(key => data[key].userId === username)
+          .reduce((result: any, key: any) => {
+            result[key] = data[key];
+            return result;
+          }, {});
+
+        console.log(userSheets)
+
+        const sheetsArray = Object.entries(userSheets).map(
+          ([name, details]: [any, any]) => ({
             name,
             age: details.age,
           })
@@ -112,7 +121,7 @@ const Characters: React.FC = () => {
     }
   };
 
-  const handleDeleteClick = (index: number, onOrOff: boolean, name: string) => {
+  const handleDeleteClick = (index: any, onOrOff: any, name: any) => {
     setIsOnlineSheet(onOrOff);
     console.log("isOnlineSheet: " + isOnlineSheet);
 
@@ -132,7 +141,7 @@ const Characters: React.FC = () => {
           Online Sheets
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {simpleSheets.map((sheet) => (
+          {simpleSheets.map((sheet, index) => (
             <div
               key={sheet.name}
               className="bg-black/80 text-gray-300 p-6 rounded-lg shadow-lg relative overflow-hidden"
@@ -151,7 +160,7 @@ const Characters: React.FC = () => {
                 Delete
               </button>
               <Link
-                to={`/characters/${sheet.name}`}
+                to={`/characters/${index}`}
                 className="block mt-2 text-blue-400 underline"
               >
                 View Details

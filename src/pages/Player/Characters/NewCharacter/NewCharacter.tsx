@@ -134,11 +134,16 @@ const CriarFicha: React.FC = () => {
   const postSheetFirebase = (sheet: ICharacterSheet) => {
     const nomePersonagem = sheet.name;
 
+    const username: any = localStorage.getItem('username');
+
+    let modifySheet = sheet;
+    modifySheet['userId'] = username;
+
     const url = `https://cyberpunk-react-default-rtdb.firebaseio.com/fichas/${nomePersonagem}.json`;
     const options = {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(sheet),
+      body: JSON.stringify(modifySheet),
     };
 
     fetch(url, options)
