@@ -70,7 +70,7 @@ const Characters: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {simpleSheets.map((sheet, index) => (
             <Link to={`/characters/${index}`} key={sheet.name}>
-              <div className="bg-black/50 text-gray-300 p-4 m-2 rounded-lg">
+              <div className="bg-black/80 text-gray-300 p-4 m-2 rounded-lg">
                 <h2>{sheet.name}</h2>
                 <p>Idade: {sheet.age}</p>
               </div>
@@ -85,7 +85,7 @@ const Characters: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {localSheets.map((sheet, index) => (
             <Link to={`/characters/local-${index}`} key={sheet.name}>
-              <div className="bg-black/50 text-gray-300 p-4 m-2 rounded-lg">
+              <div className="bg-black/80 text-gray-300 p-4 m-2 rounded-lg">
                 <h2>{sheet.name}</h2>
                 <p>Idade: {sheet.age}</p>
               </div>
