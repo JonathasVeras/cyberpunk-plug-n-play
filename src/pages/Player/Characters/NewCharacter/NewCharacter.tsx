@@ -165,7 +165,7 @@ const CriarFicha: React.FC = () => {
           <Background background={background} setBackground={setBackground} />
         }
         {step == 2 &&
-          <Attributes attributes={attributes} setAttributes={setAttributes} setStats={setStats} />
+          <Attributes attributes={attributes} setAttributes={setAttributes} setStats={setStats} removeLimit={false} />
         }
         {step == 3 &&
           <InfoCharacter characterName={characterName} setCharacterName={setCharacterName} age={age} setAge={setAge} gender={gender} setGender={setGender} />
