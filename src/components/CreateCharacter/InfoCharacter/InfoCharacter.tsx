@@ -1,6 +1,6 @@
 import React from "react";
 
-const InfoCharacter: any = ({ characterName, setCharacterName, age, setAge, gender, setGender }: any) => {
+const InfoCharacter: React.FC<any> = ({ characterName, setCharacterName, age, setAge, gender, setGender }) => {
     const handleCharacterName = (e: any) => {
         setCharacterName(e.target.value)
     }
