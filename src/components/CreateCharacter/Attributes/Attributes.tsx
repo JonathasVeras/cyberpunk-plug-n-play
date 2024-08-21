@@ -98,7 +98,7 @@ const Attributes: React.FC<AttributesProps> = ({ attributes, setAttributes, setS
                                     <input
                                         type="number"
                                         className="bg-black text-blue-punk w-20"
-                                        value={tempValues[subAttr as keyof IAttributes] ? (tempValues[subAttr as keyof IAttributes]) : 2}
+                                        value={(tempValues[subAttr as keyof IAttributes])}
                                         onChange={(e) => handleAttributeChange(subAttr as keyof IAttributes, parseInt(e.target.value, 10))}
                                         min={MIN_ATTRIBUTE_VALUE}
                                         max={MAX_ATTRIBUTE_VALUE}
