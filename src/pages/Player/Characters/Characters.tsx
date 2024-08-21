@@ -131,7 +131,7 @@ const Characters: React.FC = () => {
           Online Sheets
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {simpleSheets.map((sheet, index) => (
+          {simpleSheets.map((sheet) => (
             <div
               key={sheet.name}
               className="bg-black/80 text-gray-300 p-6 rounded-lg shadow-lg relative overflow-hidden"

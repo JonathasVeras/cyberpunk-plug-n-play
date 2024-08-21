@@ -3,9 +3,10 @@ import { ICharacterStats } from '../../../pages/Player/Characters/NewCharacter/N
 import { IAttributes } from '../../../interfaces/characterSheet';
 
 interface AttributesProps {
-    attributes: IAttributes;
-    setAttributes: (attributes: IAttributes) => void;
-    setStats: (stats: ICharacterStats) => void;
+  attributes: IAttributes;
+  setAttributes: (attributes: IAttributes) => void;
+  setStats: (stats: ICharacterStats) => void;
+  removeLimit: boolean;
 }
 
 const MIN_ATTRIBUTE_VALUE = 2;
@@ -25,6 +26,7 @@ const Attributes: React.FC<AttributesProps> = ({
   attributes,
   setAttributes,
   setStats,
+  removeLimit = false,
 }) => {
   const [tempValues, setTempValues] = useState<IAttributes>(attributes);
 
@@ -57,13 +59,12 @@ const Attributes: React.FC<AttributesProps> = ({
       woundedAndOverloadedPenalty: (agility / 2) * 1,
       damageReduction: endurance / 2,
     });
-  }, [tempValues, setStats]);
+  }, [tempValues]);
 
   const handleAttributeChange = (name: keyof IAttributes, value: number) => {
-    const validatedValue = Math.min(
-      Math.max(value, MIN_ATTRIBUTE_VALUE),
-      MAX_ATTRIBUTE_VALUE
-    );
+    const validatedValue = removeLimit
+      ? value
+      : Math.min(Math.max(value, MIN_ATTRIBUTE_VALUE), MAX_ATTRIBUTE_VALUE);
 
     const updatedAttributes = {
       ...tempValues,
@@ -74,32 +75,36 @@ const Attributes: React.FC<AttributesProps> = ({
     setAttributes(updatedAttributes);
   };
 
-  const remainingPoints =
-    TOTAL_POINTS - Object.values(tempValues).reduce((sum, val) => sum + val, 0);
+  const remainingPoints = removeLimit
+    ? null
+    : TOTAL_POINTS - Object.values(tempValues).reduce((sum, val) => sum + val, 0);
 
   return (
     <div className="bg-[#220425] text-blue-punk border-blue-punk border-3 p-6 rounded-lg w-full">
       <h3 className="text-3xl font-bold text-center mb-4">Attributes</h3>
-      <p className="text-xl text-pinkish-red mb-2">
-        Each of the following 6 attributes will have 4 sub-attributes. You can
-        define your character's affinity with each of these by distributing 24
-        points among all 24 of them.
-      </p>
-      <p className="text-xl text-pinkish-red mb-5">
-        *Remember, the minimum value for each attribute is 2 points and the
-        maximum is 10 points.
-      </p>
-      <div className="flex justify-center mb-5">
-        <label className="text-xl text-pinkish-red mr-5">
-          Points remaining:
-        </label>
-        <input
-          type="text"
-          className="bg-black text-blue-punk w-20 text-center"
-          value={remainingPoints}
-          readOnly
-        />
-      </div>
+      {!removeLimit && <>
+        <p className="text-xl text-pinkish-red mb-2">
+          Each of the following 6 attributes will have 4 sub-attributes. You can
+          define your character's affinity with each of these by distributing 24
+          points among all 24 of them.
+        </p>
+        <p className="text-xl text-pinkish-red mb-5">
+          *Remember, the minimum value for each attribute is 2 points{!removeLimit && " and the maximum is 10 points."}
+        </p>
+      </>}
+      {!removeLimit && (
+        <div className="flex justify-center mb-5">
+          <label className="text-xl text-pinkish-red mr-5">
+            Points remaining:
+          </label>
+          <input
+            type="text"
+            className="bg-black text-blue-punk w-20 text-center"
+            value={remainingPoints ?? ""}
+            readOnly
+          />
+        </div>
+      )}
       <div className="flex flex-row space-y-5">
         {Object.entries(attributeCategories).map(
           ([category, subAttributes]) => (
@@ -124,7 +129,7 @@ const Attributes: React.FC<AttributesProps> = ({
                         )
                       }
                       min={MIN_ATTRIBUTE_VALUE}
-                      max={MAX_ATTRIBUTE_VALUE}
+                      {...(!removeLimit && { max: MAX_ATTRIBUTE_VALUE })}
                     />
                   </div>
                 ))}
