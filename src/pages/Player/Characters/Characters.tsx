@@ -32,6 +32,7 @@ const Characters: React.FC = () => {
 
   const fetchSheets = async () => {
     if (isAuthenticated && isOnline) {
+      const username = localStorage.getItem('username');
       try {
         const response = await fetch(
           "https://cyberpunk-react-default-rtdb.firebaseio.com/fichas.json"
