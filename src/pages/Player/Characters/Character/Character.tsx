@@ -4,7 +4,6 @@ import { ICharacterSheet } from '../../../../interfaces/characterSheet';
 import { Weapon } from '../../../../interfaces/IWeapon';
 import WeaponsListSheet from '../../../../components/WeaponsList/WeaponsListSheet';
 import weaponsData from '../../../../jsons/Weapons-Cyberpunk.json';
-import ActionsSidebar from '../../../../components/ActionsSidebar/ActionsSidebar';
 import { ICyberware } from '../../../../interfaces/ICyberware';
 import cyberwareData from '../../../../jsons/Cyberwares.json';
 import CyberwareListSheet from '../../../../components/CyberwareList/CyberwareListSheet';
@@ -219,7 +218,7 @@ const Character: React.FC = () => {
     }
 
     return (
-        <div className={`bg-[url('../wallpapers/character-sheet-play-wallpaper.jpg')] bg-cover bg-center bg-fixed min-h-screen text-white ${isEditing ? ('') : ('flex flex-col sm:grid sm:grid-cols-3')}`}>
+        <div className={`bg-[url('../wallpapers/character-sheet-play-wallpaper.jpg')] bg-cover bg-center bg-fixed min-h-screen text-white ${isEditing ? ('') : ('flex flex-col sm:grid sm:grid-cols-2')}`}>
             {isEditing ? (
                 <>
                     <EditCharacterSheet
@@ -349,9 +348,6 @@ const Character: React.FC = () => {
                             </div>
                         </div>
                     </div>
-
-                    {/* Sidebar with Actions */}
-                    <ActionsSidebar weapons={character.weapons} />
 
                     {/* Dice Button and Dropdown */}
                     <div className="fixed bottom-4 right-4">
