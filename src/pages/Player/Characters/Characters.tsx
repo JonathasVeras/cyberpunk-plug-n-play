@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuth } from "../../../contexts/AuthContext";
 import { ICharacterSheet } from "../../../interfaces/characterSheet";
 import { Link } from "react-router-dom";
+import characterPic from "../../../../public/characterPic.jpg"; // Certifique-se de que o caminho está correto
 
 interface CharacterDetails {
   age: number;
@@ -79,38 +80,48 @@ const Characters: React.FC = () => {
 
   return (
     <div className="bg-[url('../wallpapers/characters-list-wp.png')] bg-cover bg-center bg-fixed min-h-screen">
-      <div className="flex flex-col items-left">
+      <div className="p-6">
         {/* Online Sheets Section */}
-        <h1 className="text-[3rem] bg-black/50 text-gray-300 p-2 m-2 w-[300px] text-center rounded-lg">
+        <h1 className="text-4xl bg-black/50 text-gray-300 p-4 mb-6 w-full text-center rounded-lg shadow-lg">
           Online Sheets
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {simpleSheets.map((sheet, index) => (
             <Link to={`/characters/${index}`} key={sheet.name}>
-              <div className="bg-black/80 text-gray-300 p-4 m-2 rounded-lg">
-                <h2>{sheet.name}</h2>
-                <p>Age: {sheet.age}</p>
+              <div className="bg-black/80 text-gray-300 p-6 rounded-lg shadow-lg relative overflow-hidden">
+                <img
+                  src={characterPic}
+                  alt="Character"
+                  className="w-full h-40 object-cover mb-4 rounded-lg"
+                />
+                <h2 className="text-xl font-semibold mb-2">{sheet.name}</h2>
+                <p className="text-gray-400">Age: {sheet.age}</p>
               </div>
             </Link>
           ))}
         </div>
 
         {/* Offline Sheets Section */}
-        <h1 className="text-[3rem] bg-black/50 text-gray-300 p-2 m-2 w-[300px] text-center rounded-lg">
+        <h1 className="text-4xl bg-black/50 text-gray-300 p-4 mb-6 w-full text-center rounded-lg shadow-lg">
           Offline Sheets
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {localSheets.map((sheet, index) => (
-            <div key={sheet.name} className="bg-black/80 text-gray-300 p-4 m-2 rounded-lg relative">
-              <h2>{sheet.name}</h2>
-              <p>Age: {sheet.age}</p>
+            <div key={sheet.name} className="bg-black/80 text-gray-300 p-6 rounded-lg shadow-lg relative overflow-hidden">
+              <img
+                src={characterPic}
+                alt="Character"
+                className="w-full h-40 object-cover mb-4 rounded-lg"
+              />
+              <h2 className="text-xl font-semibold mb-2">{sheet.name}</h2>
+              <p className="text-gray-400">Age: {sheet.age}</p>
               <button
                 onClick={() => handleDeleteClick(index)}
-                className="absolute top-2 right-2 bg-red-600 text-white p-2 rounded-lg"
+                className="absolute top-2 right-2 bg-red-600 text-white p-2 rounded-lg shadow-md"
               >
                 Delete
               </button>
-              <Link to={`/characters/local-${index}`} className="block mt-2 text-blue-400">
+              <Link to={`/characters/local-${index}`} className="block mt-2 text-blue-400 underline">
                 View Details
               </Link>
             </div>

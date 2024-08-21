@@ -43,7 +43,6 @@ const Character: React.FC = () => {
 
         setWeaponList(formattedData);
         setCyberwareList(formattedDataCyberware);
-        console.log(formattedDataCyberware)
     }, []);
 
     useEffect(() => {

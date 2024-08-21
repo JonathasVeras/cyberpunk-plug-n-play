@@ -4,54 +4,6 @@ import { loginAPI } from '../../services/loginAPI';
 import GenericModal from '../../components/GenericModal/GenericModal';
 import { useAuth } from '../../contexts/AuthContext';
 
-const characterSheet: any = {
-  background: "media",
-  attributes: {
-    acceptance: 2,
-    agility: 8,
-    selfControl: 2,
-    blocking: 2,
-    fighting: 2,
-    body: 8,
-    destiny: 2,
-    dexterity: 2,
-    empathy: 2,
-    dodge: 2,
-    faith: 2,
-    focus: 2,
-    strength: 8,
-    humanity: 2,
-    intelligence: 2,
-    intimidation: 2,
-    hacking: 2,
-    leadership: 2,
-    narrative: 2,
-    protection: 2,
-    endurance: 8,
-    wisdom: 2,
-    seduction: 2,
-    luck: 2,
-  },
-  difficultTerrainMovement: 8,
-  run: 16,
-  woundedAndOverloaded: 4,
-  userId: "-O2RF-ZooC3Yf_vLCOWh",
-  age: "40",
-  identity: 26,
-  movement: 4,
-  name: "Datena",
-  passivePerception: 2,
-  maxWeight: 84,
-  tokenHealthPoints: 160,
-  damageReduction: 4,
-  maxSanity: 4,
-  gender: "M",
-  baseSpeed: 5,
-  maxHealth: 16,
-  weapons: [],
-  cyberware: [],
-};
-
 const Login: React.FC = () => {
   const navigate = useNavigate();
   const { setIsAuthenticated, setIsOnline } = useAuth();
@@ -75,14 +27,6 @@ const Login: React.FC = () => {
   const logOffline = () => {
     setIsOnline(false);
     setIsAuthenticated(false);
-
-    const storedSheets = localStorage.getItem('CharacterSheetsOffline');
-    const sheetsList = storedSheets ? JSON.parse(storedSheets) : [];
-
-    sheetsList.push(characterSheet);
-
-    localStorage.setItem('CharacterSheetsOffline', JSON.stringify(sheetsList));
-
     navigate('/characters');
   };
 

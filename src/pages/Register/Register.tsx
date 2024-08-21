@@ -12,7 +12,6 @@ const Register: React.FC = () => {
   const handleSubmit = async () => {
     if (password === passwordRepeat) {
       const response: any = await registerAPI(username, password);
-      console.log(response);
       if (response) {
         alert("User created");
         navigate("/");
