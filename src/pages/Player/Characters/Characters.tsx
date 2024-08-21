@@ -23,6 +23,8 @@ const Characters: React.FC = () => {
   const [simpleSheets, setSimpleSheets] = useState<SimpleCharacter[]>([]);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [sheetToDelete, setSheetToDelete] = useState<number | null>(null);
+  const [sheetDeleteName, setSheetDeleteName] = useState<string | null>(null);
+  const [isOnlineSheet, setIsOnlineSheet] = useState<boolean | null>(null);
 
   useEffect(() => {
     fetchSheets();
@@ -36,7 +38,6 @@ const Characters: React.FC = () => {
         );
         const data: CharacterData = await response.json();
 
-        // Transforme o objeto em um array
         const sheetsArray: SimpleCharacter[] = Object.entries(data).map(
           ([name, details]) => ({
             name,
@@ -49,10 +50,8 @@ const Characters: React.FC = () => {
         console.error("Error fetching online sheets:", error);
       }
     } else {
-      // Fetch offline sheets
       const storedSheets = localStorage.getItem("CharacterSheetsOffline");
       if (storedSheets) {
-        // Convert the stored object to an array
         const storedSheetsArray: ICharacterSheet[] = Object.values(
           JSON.parse(storedSheets)
         );
@@ -64,50 +63,79 @@ const Characters: React.FC = () => {
   };
 
   const deleteSheet = () => {
-    if (sheetToDelete !== null) {
-      const updatedSheets = localSheets.filter((_, i) => i !== sheetToDelete);
-      setLocalSheets(updatedSheets);
-      localStorage.setItem("CharacterSheetsOffline", JSON.stringify(updatedSheets));
+    if (
+      isOnlineSheet !== null &&
+      (sheetToDelete !== null || sheetDeleteName !== null)
+    ) {
+      if (isOnlineSheet) {
+        // Aqui você adicionaria a lógica para deletar a ficha online, por exemplo:
+        // Lógica para deletar do Firebase
+
+        const deleteUrl = `https://cyberpunk-react-default-rtdb.firebaseio.com/fichas/${sheetDeleteName}.json`;
+        fetch(deleteUrl, {
+          method: "DELETE",
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(
+                "Erro na requisição DELETE: " + response.statusText
+              );
+            }
+            return response.json();
+          })
+          .then(() => {
+            console.log(`Ficha ${sheetDeleteName} removida com sucesso.`);
+            alert(`Ficha ${sheetDeleteName} removida com sucesso.`);
+
+            setSimpleSheets((prevSheets) =>
+              prevSheets.filter((sheet) => sheet.name !== sheetDeleteName)
+            );
+          })
+          .catch((error) => {
+            console.error("Erro ao remover a ficha:", error);
+          });
+      } else {
+        const updatedSheets = localSheets.filter((_, i) => i !== sheetToDelete);
+        setLocalSheets(updatedSheets);
+        localStorage.setItem(
+          "CharacterSheetsOffline",
+          JSON.stringify(updatedSheets)
+        );
+      }
+
       setShowModal(false);
       setSheetToDelete(null);
+      setSheetDeleteName(null);
+      setIsOnlineSheet(null);
+      fetchSheets();
     }
   };
 
-  const handleDeleteClick = (index: number) => {
-    setSheetToDelete(index);
+  const handleDeleteClick = (index: number, onOrOff: boolean, name: string) => {
+    setIsOnlineSheet(onOrOff);
+    console.log("isOnlineSheet: " + isOnlineSheet);
+
+    if (onOrOff) {
+      setSheetDeleteName(name);
+      console.log("nome da ficha pra ser deletada: " + sheetDeleteName);
+    } else {
+      setSheetToDelete(index);
+    }
     setShowModal(true);
   };
 
   return (
     <div className="bg-[url('../wallpapers/characters-list-wp.png')] bg-cover bg-center bg-fixed min-h-screen">
       <div className="p-6">
-        {/* Online Sheets Section */}
         <h1 className="text-4xl bg-black/50 text-gray-300 p-4 mb-6 w-full text-center rounded-lg shadow-lg">
           Online Sheets
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {simpleSheets.map((sheet, index) => (
-            <Link to={`/characters/${index}`} key={sheet.name}>
-              <div className="bg-black/80 text-gray-300 p-6 rounded-lg shadow-lg relative overflow-hidden">
-                <img
-                  src={characterPic}
-                  alt="Character"
-                  className="w-full h-40 object-cover mb-4 rounded-lg"
-                />
-                <h2 className="text-xl font-semibold mb-2">{sheet.name}</h2>
-                <p className="text-gray-400">Age: {sheet.age}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        {/* Offline Sheets Section */}
-        <h1 className="text-4xl bg-black/50 text-gray-300 p-4 mb-6 w-full text-center rounded-lg shadow-lg">
-          Offline Sheets
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {localSheets.map((sheet, index) => (
-            <div key={sheet.name} className="bg-black/80 text-gray-300 p-6 rounded-lg shadow-lg relative overflow-hidden">
+            <div
+              key={sheet.name}
+              className="bg-black/80 text-gray-300 p-6 rounded-lg shadow-lg relative overflow-hidden"
+            >
               <img
                 src={characterPic}
                 alt="Character"
@@ -116,19 +144,53 @@ const Characters: React.FC = () => {
               <h2 className="text-xl font-semibold mb-2">{sheet.name}</h2>
               <p className="text-gray-400">Age: {sheet.age}</p>
               <button
-                onClick={() => handleDeleteClick(index)}
+                onClick={() => handleDeleteClick(-1, true, sheet.name)}
                 className="absolute top-2 right-2 bg-red-600 text-white p-2 rounded-lg shadow-md"
               >
                 Delete
               </button>
-              <Link to={`/characters/local-${index}`} className="block mt-2 text-blue-400 underline">
+              <Link
+                to={`/characters/${index}`}
+                className="block mt-2 text-blue-400 underline"
+              >
                 View Details
               </Link>
             </div>
           ))}
         </div>
 
-        {/* Modal Confirmation */}
+        <h1 className="text-4xl bg-black/50 text-gray-300 p-4 mt-8 mb-6 w-full text-center rounded-lg shadow-lg">
+          Offline Sheets
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {localSheets.map((sheet, index) => (
+            <div
+              key={sheet.name}
+              className="bg-black/80 text-gray-300 p-6 rounded-lg shadow-lg relative overflow-hidden"
+            >
+              <img
+                src={characterPic}
+                alt="Character"
+                className="w-full h-40 object-cover mb-4 rounded-lg"
+              />
+              <h2 className="text-xl font-semibold mb-2">{sheet.name}</h2>
+              <p className="text-gray-400">Age: {sheet.age}</p>
+              <button
+                onClick={() => handleDeleteClick(index, false, "")}
+                className="absolute top-2 right-2 bg-red-600 text-white p-2 rounded-lg shadow-md"
+              >
+                Delete
+              </button>
+              <Link
+                to={`/characters/local-${index}`}
+                className="block mt-2 text-blue-400 underline"
+              >
+                View Details
+              </Link>
+            </div>
+          ))}
+        </div>
+
         {showModal && (
           <div className="fixed inset-0 flex items-center justify-center bg-black/70">
             <div className="bg-white p-6 rounded-lg shadow-lg w-1/3">

@@ -99,7 +99,11 @@ const CriarFicha: React.FC = () => {
 
 
   const handleSair = () => {
-    setStep(step - 1)
+    if (step > 1) {
+      setStep(step - 1);
+    } else {
+      navigate("/characters");
+    }
   };
 
   const handleContinuar = () => {
@@ -115,16 +119,16 @@ const CriarFicha: React.FC = () => {
       }
       navigate("/characters");
     }
-    setStep(auxStep)
+    setStep(auxStep);
   };
 
   const postSheetLocal = (sheet: ICharacterSheet) => {
-    const storedSheets = localStorage.getItem('CharacterSheetsOffline');
+    const storedSheets = localStorage.getItem("CharacterSheetsOffline");
     const sheetsList = storedSheets ? JSON.parse(storedSheets) : [];
 
     sheetsList.push(sheet);
 
-    localStorage.setItem('CharacterSheetsOffline', JSON.stringify(sheetsList));
+    localStorage.setItem("CharacterSheetsOffline", JSON.stringify(sheetsList));
   };
 
   const postSheetFirebase = (sheet: ICharacterSheet) => {
@@ -143,7 +147,7 @@ const CriarFicha: React.FC = () => {
         return response.json();
       })
       .then(() => {
-        alert("Ficha criada com sucesso");
+        alert(nomePersonagem + " criada com sucesso");
       })
       .catch((error) => {
         console.error("Erro ao enviar os dados:", error);
