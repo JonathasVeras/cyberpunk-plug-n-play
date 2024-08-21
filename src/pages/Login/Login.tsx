@@ -16,6 +16,7 @@ const Login: React.FC = () => {
 
     const response: any = await loginAPI(username, password);
     if (response) {
+      localStorage.setItem('username', username);
       setIsAuthenticated(true);
       setIsOnline(true);
       navigate('/characters');
