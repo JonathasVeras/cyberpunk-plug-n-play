@@ -7,7 +7,7 @@ export async function registerAPI(username: String, password: String) {
         return response.data;
     } catch (error) {
         console.error('Erro ao registrar o perfil:', error);
-        alert('Erro ao registrar o perfil. Tente novamente.');
+        alert('Error.');
         return null;
     }
 }

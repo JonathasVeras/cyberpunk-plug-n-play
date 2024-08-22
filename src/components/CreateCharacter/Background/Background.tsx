@@ -15,8 +15,7 @@ const Background: React.FC<BackgroundProps> = ({ background, setBackground }) =>
                 Background
             </label>
             <p className="text-lg text-[#ef767a] mb-4">
-                Seu Antecedente dirá quem você era antes da aventura começar, não
-                precisa representar sua ocupação atual:
+                Your Background will define who you were before the adventure began; it doesn't have to represent your current occupation:
             </p>
             <select
                 id="selectBackground"

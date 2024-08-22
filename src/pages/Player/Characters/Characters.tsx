@@ -82,7 +82,7 @@ const Characters: React.FC = () => {
             return response.json();
           })
           .then(() => {
-            alert(`Ficha ${sheetDeleteName} removida com sucesso.`);
+            alert(`Sheet ${sheetDeleteName} removed.`);
 
             setSimpleSheets((prevSheets) =>
               prevSheets.filter((sheet) => sheet.name !== sheetDeleteName)

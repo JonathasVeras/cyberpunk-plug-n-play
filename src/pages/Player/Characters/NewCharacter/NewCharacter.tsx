@@ -148,14 +148,14 @@ const CriarFicha: React.FC = () => {
 
     fetch(url, options)
       .then((response) => {
-        if (!response.ok) throw new Error("Erro na requisição");
+        if (!response.ok) throw new Error("Error");
         return response.json();
       })
       .then(() => {
-        alert(nomePersonagem + " criada com sucesso");
+        alert(nomePersonagem + " created");
       })
       .catch((error) => {
-        console.error("Erro ao enviar os dados:", error);
+        console.error("Error:", error);
       });
   };
 

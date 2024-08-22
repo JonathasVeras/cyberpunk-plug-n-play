@@ -14,7 +14,7 @@ export async function loginAPI(username: String, password: String) {
     );
     return perfil;
   } catch (error) {
-    alert("Erro ao autenticar o perfil. Tente novamente.");
+    alert("Error.");
     return null;
   }
 }
