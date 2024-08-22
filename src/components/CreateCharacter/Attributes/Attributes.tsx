@@ -105,7 +105,7 @@ const Attributes: React.FC<AttributesProps> = ({
           />
         </div>
       )}
-      <div className="flex flex-row space-y-5">
+      <div className="lg:flex flex-row space-y-5">
         {Object.entries(attributeCategories).map(
           ([category, subAttributes]) => (
             <div key={category} className="flex-1">

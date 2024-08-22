@@ -12,11 +12,29 @@ interface EditCharacterSheetProps {
 const EditCharacterSheet: React.FC<EditCharacterSheetProps> = ({ character, setCharacter, onClose, saveCharacter }) => {
     const [formState, setFormState] = useState<ICharacterSheet | null>(character);
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const handleInputChange = (e: any) => {
         if (formState) {
             setFormState({
                 ...formState,
                 [e.target.name]: e.target.value,
+            });
+        }
+    };
+
+    const handleInputChangeAge = (e: any) => {
+        if (formState) {
+            setFormState({
+                ...formState,
+                age: e.target.value,
+            });
+        }
+    };
+
+    const handleInputChangeGender = (e: any) => {
+        if (formState) {
+            setFormState({
+                ...formState,
+                gender: e.target.value,
             });
         }
     };
@@ -68,20 +86,24 @@ const EditCharacterSheet: React.FC<EditCharacterSheetProps> = ({ character, setC
                     type="text"
                     name="idade"
                     value={formState.age}
-                    onChange={handleInputChange}
+                    onChange={handleInputChangeAge}
                     className="w-full p-2 bg-gray-800 text-white rounded border border-gray-700"
                 />
             </div>
             <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-300 mb-2">Sex:</label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Gender:</label>
                 <select
                     name="sexo"
                     value={formState.gender}
-                    onChange={handleInputChange}
+                    onChange={handleInputChangeGender}
                     className="w-full p-2 bg-gray-800 text-white rounded border border-gray-700"
                 >
-                    <option value="M">Male</option>
-                    <option value="F">Female</option>
+                    <option value="">Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Non-binary">Non-binary</option>
+                    <option value="Other">Other</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
                 </select>
             </div>
             <Attributes
