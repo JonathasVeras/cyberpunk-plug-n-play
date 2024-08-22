@@ -13,7 +13,6 @@ import FaDiceD10 from "../../../../../public/diceIcon/d10icon.png";
 import FaDiceD4 from "../../../../../public/diceIcon/d4icon.png";
 import FaDiceD12 from "../../../../../public/diceIcon/d12icon.png";
 import EditCharacterSheet from "../../../../components/EditCharacterSheet/EditCharacterSheet";
-import instance from "../../../../api/axios";
 
 const Character: React.FC = () => {
   const { id } = useParams<{ id: string }>();
