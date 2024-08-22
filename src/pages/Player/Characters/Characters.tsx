@@ -19,7 +19,8 @@ const Characters: React.FC = () => {
   }, [isAuthenticated, isOnline]);
 
   const fetchSheets = async () => {
-    if (isAuthenticated && isOnline) {
+    const isOnline = localStorage.getItem('isOnline');
+    if ((isAuthenticated && isOnline) || isOnline == 'true') {
       const username = localStorage.getItem('username');
       try {
         const response = await fetch(

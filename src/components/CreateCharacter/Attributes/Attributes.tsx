@@ -105,22 +105,22 @@ const Attributes: React.FC<AttributesProps> = ({
           />
         </div>
       )}
-      <div className="lg:flex flex-row space-y-5">
+      <div className="lg:flex flex-row">
         {Object.entries(attributeCategories).map(
           ([category, subAttributes]) => (
-            <div key={category} className="flex-1">
+            <div key={category} className="flex-1 items-center justify-center">
               <h4 className="font-bold text-xl border-[#05b8e9] border-3 rounded-md text-center mb-2 bg-[#220425] p-2">
                 {category}
               </h4>
               <div className="flex flex-col space-y-2">
                 {subAttributes.map((subAttr) => (
-                  <div key={subAttr} className="flex items-center">
-                    <label className="text-lg mr-2">
+                  <div key={subAttr} className="grid grid-cols-3 items-center">
+                    <label className="text-lg">
                       {subAttr.charAt(0).toUpperCase() + subAttr.slice(1)}:
                     </label>
                     <input
                       type="number"
-                      className="bg-black text-blue-punk w-20"
+                      className="bg-black text-blue-punk p-2 rounded-lg"
                       value={tempValues[subAttr as keyof IAttributes]}
                       onChange={(e) =>
                         handleAttributeChange(

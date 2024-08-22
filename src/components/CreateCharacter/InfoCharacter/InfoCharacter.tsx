@@ -14,7 +14,7 @@ const InfoCharacter: React.FC<any> = ({ characterName, setCharacterName, age, se
     return (
         <>
             <div className="flex justify-center mt-4 mb-4">
-                <form className="bg-dark-purple text-blue-punk w-full max-w-5xl p-5 border border-blue-punk">
+                <form className="bg-dark-purple text-blue-punk w-full max-w-5xl p-5">
                     <h3 className="text-2xl font-bold text-blue-punk mb-4">
                         Personal Info
                     </h3>

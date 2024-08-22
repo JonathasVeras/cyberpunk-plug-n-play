@@ -160,10 +160,7 @@ const CriarFicha: React.FC = () => {
   };
 
   return (
-    <div className="bg-[url('../wallpapers/characters-list-wp.png')] min-h-screen bg-cover bg-fixed bg-center flex flex-col items-center">
-      <h1 className="text-4xl font-bold text-[#ef767a] py-4 self-start ml-4">
-        Crie Sua Ficha
-      </h1>
+    <div className="bg-[url('../wallpapers/create-sheet-wallpaper.jpg')] min-h-screen bg-cover bg-fixed bg-center flex flex-col items-center">
 
       <div className="bg-[#220425] text-[#00ffff] border-2 border-[#00ffff] p-6 rounded-tr-xl rounded-bl-xl mt-20">
         {step == 1 &&

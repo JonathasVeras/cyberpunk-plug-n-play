@@ -9,7 +9,12 @@ export default {
         "blue-punk": "#00ffff",
         "dark-purple": "#220425",
       },
+      fontFamily: {
+        sans: ['Orbitron', 'sans-serif'], // Define Orbitron como a fonte principal
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
