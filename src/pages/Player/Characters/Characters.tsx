@@ -4,23 +4,11 @@ import { ICharacterSheet } from "../../../interfaces/characterSheet";
 import { Link } from "react-router-dom";
 import characterPic from "../../../../public/characterPic.jpg"; // Certifique-se de que o caminho está correto
 
-interface CharacterDetails {
-  age: any;
-}
-
-interface CharacterData {
-  [key: string]: CharacterDetails;
-}
-
-interface SimpleCharacter {
-  name: string | null;
-  age: any;
-}
 
 const Characters: React.FC = () => {
   const { isAuthenticated, isOnline } = useAuth();
   const [localSheets, setLocalSheets] = useState<ICharacterSheet[]>([]);
-  const [simpleSheets, setSimpleSheets] = useState<SimpleCharacter[]>([]);
+  const [simpleSheets, setSimpleSheets] = useState<any[]>([]);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [sheetToDelete, setSheetToDelete] = useState<number | null>(null);
   const [sheetDeleteName, setSheetDeleteName] = useState<string | null>(null);
@@ -50,6 +38,7 @@ const Characters: React.FC = () => {
           ([name, details]: [any, any]) => ({
             name,
             age: details.age,
+            characterName: details.name,
           })
         );
 
@@ -146,7 +135,7 @@ const Characters: React.FC = () => {
                 alt="Character"
                 className="w-full h-40 object-cover mb-4 rounded-lg"
               />
-              <h2 className="text-xl font-semibold mb-2">{sheet.name}</h2>
+              <h2 className="text-xl font-semibold mb-2">{sheet.characterName}</h2>
               <p className="text-gray-400">Age: {sheet.age}</p>
               <button
                 onClick={() => handleDeleteClick(-1, true, sheet.name)}

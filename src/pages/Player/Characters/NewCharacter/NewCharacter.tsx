@@ -139,9 +139,9 @@ const CriarFicha: React.FC = () => {
     let modifySheet = sheet;
     modifySheet['userId'] = username;
 
-    const url = `https://cyberpunk-react-default-rtdb.firebaseio.com/fichas/${nomePersonagem}.json`;
+    const url = `https://cyberpunk-react-default-rtdb.firebaseio.com/fichas.json`;
     const options = {
-      method: "PUT",
+      method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(modifySheet),
     };

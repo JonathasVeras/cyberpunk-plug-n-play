@@ -271,18 +271,7 @@ const Character: React.FC = () => {
         localStorage.setItem("CharacterSheetsOffline", JSON.stringify(sheets));
       }
     } else {
-      const url = `/fichas/${id}.json`;
-
-      try {
-        const response = await instance.post(url, {
-          body: JSON.stringify(formState),
-        });
-        return response.data;
-      } catch (error) {
-        console.error("Erro ao salvar ficha editada:", error);
-        alert("Erro ao salvar edição. Tente novamente.");
-        return null;
-      }
+      updateFichaNoFirebase(id, formState);
     }
   };
 
