@@ -112,7 +112,7 @@ const CriarFicha: React.FC = () => {
     if (auxStep == 4) {
       const sheet: ICharacterSheet = createSheet();
       if (isAuthenticated && isOnline) {
-        postSheetFirebase(sheet);
+        // postSheetFirebase(sheet);
       } else {
         postSheetLocal(sheet);
         alert("You are offline. your sheet will be save locally.");
@@ -131,33 +131,33 @@ const CriarFicha: React.FC = () => {
     localStorage.setItem("CharacterSheetsOffline", JSON.stringify(sheetsList));
   };
 
-  const postSheetFirebase = (sheet: ICharacterSheet) => {
-    const nomePersonagem = sheet.name;
+  // const postSheetFirebase = (sheet: ICharacterSheet) => {
+  //   const nomePersonagem = sheet.name;
 
-    const username: any = localStorage.getItem('username');
+  //   const username: any = localStorage.getItem('username');
 
-    let modifySheet = sheet;
-    modifySheet['userId'] = username;
+  //   let modifySheet = sheet;
+  //   modifySheet['userId'] = username;
 
-    const url = `https://cyberpunk-react-default-rtdb.firebaseio.com/fichas.json`;
-    const options = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(modifySheet),
-    };
+  //   const url = `https://cyberpunk-react-default-rtdb.firebaseio.com/fichas.json`;
+  //   const options = {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(modifySheet),
+  //   };
 
-    fetch(url, options)
-      .then((response) => {
-        if (!response.ok) throw new Error("Error");
-        return response.json();
-      })
-      .then(() => {
-        alert(nomePersonagem + " created");
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  };
+  //   fetch(url, options)
+  //     .then((response) => {
+  //       if (!response.ok) throw new Error("Error");
+  //       return response.json();
+  //     })
+  //     .then(() => {
+  //       alert(nomePersonagem + " created");
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     });
+  // };
 
   return (
     <div className="bg-[url('../wallpapers/create-sheet-wallpaper.jpg')] min-h-screen bg-cover bg-fixed bg-center flex flex-col items-center">

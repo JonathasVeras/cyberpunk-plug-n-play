@@ -97,7 +97,7 @@ const Character: React.FC = () => {
           );
         }
       } else {
-        updateFichaNoFirebase(id, updatedCharacter);
+        // updateFichaNoFirebase(id, updatedCharacter);
       }
     }
   };
@@ -121,7 +121,7 @@ const Character: React.FC = () => {
           );
         }
       } else {
-        updateFichaNoFirebase(id, updatedCharacter);
+        // updateFichaNoFirebase(id, updatedCharacter);
       }
     }
   };
@@ -154,7 +154,7 @@ const Character: React.FC = () => {
           );
         }
       } else {
-        updateFichaNoFirebase(id, updatedCharacter);
+        // updateFichaNoFirebase(id, updatedCharacter);
       }
     }
   };
@@ -178,31 +178,31 @@ const Character: React.FC = () => {
           );
         }
       } else {
-        updateFichaNoFirebase(id, updatedCharacter);
+        // updateFichaNoFirebase(id, updatedCharacter);
       }
     }
   };
 
-  const updateFichaNoFirebase = (
-    id: string | undefined,
-    updatedCharacter: ICharacterSheet | null
-  ) => {
-    const url = `https://cyberpunk-react-default-rtdb.firebaseio.com/fichas/${id}.json`;
-    const options = {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedCharacter),
-    };
+  // const updateFichaNoFirebase = (
+  //   id: string | undefined,
+  //   updatedCharacter: ICharacterSheet | null
+  // ) => {
+  //   const url = `https://cyberpunk-react-default-rtdb.firebaseio.com/fichas/${id}.json`;
+  //   const options = {
+  //     method: "PUT",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(updatedCharacter),
+  //   };
 
-    fetch(url, options)
-      .then((response) => {
-        if (!response.ok) throw new Error("Erro na requisição");
-        return response.json();
-      })
-      .catch((error) => {
-        console.error("Erro ao enviar os dados:", error);
-      });
-  };
+  //   fetch(url, options)
+  //     .then((response) => {
+  //       if (!response.ok) throw new Error("Erro na requisição");
+  //       return response.json();
+  //     })
+  //     .catch((error) => {
+  //       console.error("Erro ao enviar os dados:", error);
+  //     });
+  // };
 
   const fetchCharacter = async () => {
     if (id?.startsWith("local-")) {
@@ -270,7 +270,7 @@ const Character: React.FC = () => {
         localStorage.setItem("CharacterSheetsOffline", JSON.stringify(sheets));
       }
     } else {
-      updateFichaNoFirebase(id, formState);
+      // updateFichaNoFirebase(id, formState);
     }
   };
 

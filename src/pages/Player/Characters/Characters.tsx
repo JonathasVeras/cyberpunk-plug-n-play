@@ -8,7 +8,7 @@ import characterPic from "../../../../public/characterPic.jpg"; // Certifique-se
 const Characters: React.FC = () => {
   const { isAuthenticated, isOnline } = useAuth();
   const [localSheets, setLocalSheets] = useState<ICharacterSheet[]>([]);
-  const [simpleSheets, setSimpleSheets] = useState<any[]>([]);
+  // const [simpleSheets, setSimpleSheets] = useState<any[]>([]);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [sheetToDelete, setSheetToDelete] = useState<number | null>(null);
   const [sheetDeleteName, setSheetDeleteName] = useState<string | null>(null);
@@ -21,32 +21,32 @@ const Characters: React.FC = () => {
   const fetchSheets = async () => {
     const isOnline = localStorage.getItem('isOnline');
     if ((isAuthenticated && isOnline) || isOnline == 'true') {
-      const username = localStorage.getItem('username');
-      try {
-        const response = await fetch(
-          "https://cyberpunk-react-default-rtdb.firebaseio.com/fichas.json"
-        );
-        const data: any = await response.json();
+      // const username = localStorage.getItem('username');
+      // try {
+      //   const response = await fetch(
+      //     "https://cyberpunk-react-default-rtdb.firebaseio.com/fichas.json"
+      //   );
+      //   const data: any = await response.json();
 
-        const userSheets = Object.keys(data)
-          .filter(key => data[key].userId === username)
-          .reduce((result: any, key: any) => {
-            result[key] = data[key];
-            return result;
-          }, {});
+      //   const userSheets = Object.keys(data)
+      //     .filter(key => data[key].userId === username)
+      //     .reduce((result: any, key: any) => {
+      //       result[key] = data[key];
+      //       return result;
+      //     }, {});
 
-        const sheetsArray = Object.entries(userSheets).map(
-          ([name, details]: [any, any]) => ({
-            name,
-            age: details.age,
-            characterName: details.name,
-          })
-        );
+      //   const sheetsArray = Object.entries(userSheets).map(
+      //     ([name, details]: [any, any]) => ({
+      //       name,
+      //       age: details.age,
+      //       characterName: details.name,
+      //     })
+      //   );
 
-        setSimpleSheets(sheetsArray);
-      } catch (error) {
-        console.error("Error fetching online sheets:", error);
-      }
+      //   setSimpleSheets(sheetsArray);
+      // } catch (error) {
+      //   console.error("Error fetching online sheets:", error);
+      // }
     } else {
       const storedSheets = localStorage.getItem("CharacterSheetsOffline");
       if (storedSheets) {
@@ -66,31 +66,28 @@ const Characters: React.FC = () => {
       (sheetToDelete !== null || sheetDeleteName !== null)
     ) {
       if (isOnlineSheet) {
-        // Aqui você adicionaria a lógica para deletar a ficha online, por exemplo:
-        // Lógica para deletar do Firebase
+        // const deleteUrl = `https://cyberpunk-react-default-rtdb.firebaseio.com/fichas/${sheetDeleteName}.json`;
+        // fetch(deleteUrl, {
+        //   method: "DELETE",
+        // })
+        //   .then((response) => {
+        //     if (!response.ok) {
+        //       throw new Error(
+        //         "Erro na requisição DELETE: " + response.statusText
+        //       );
+        //     }
+        //     return response.json();
+        //   })
+        //   .then(() => {
+        //     alert(`Sheet ${sheetDeleteName} removed.`);
 
-        const deleteUrl = `https://cyberpunk-react-default-rtdb.firebaseio.com/fichas/${sheetDeleteName}.json`;
-        fetch(deleteUrl, {
-          method: "DELETE",
-        })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(
-                "Erro na requisição DELETE: " + response.statusText
-              );
-            }
-            return response.json();
-          })
-          .then(() => {
-            alert(`Sheet ${sheetDeleteName} removed.`);
-
-            setSimpleSheets((prevSheets) =>
-              prevSheets.filter((sheet) => sheet.name !== sheetDeleteName)
-            );
-          })
-          .catch((error) => {
-            console.error("Erro ao remover a ficha:", error);
-          });
+        //     setSimpleSheets((prevSheets) =>
+        //       prevSheets.filter((sheet) => sheet.name !== sheetDeleteName)
+        //     );
+        //   })
+        //   .catch((error) => {
+        //     console.error("Erro ao remover a ficha:", error);
+        //   });
       } else {
         const updatedSheets = localSheets.filter((_, i) => i !== sheetToDelete);
         setLocalSheets(updatedSheets);
@@ -122,7 +119,7 @@ const Characters: React.FC = () => {
   return (
     <div className="bg-[url('../wallpapers/characters-list-wp.png')] bg-cover bg-center bg-fixed min-h-screen">
       <div className="p-6">
-        <h1 className="text-4xl bg-black/50 text-gray-300 p-4 mb-6 w-full text-center rounded-lg shadow-lg">
+        {/* <h1 className="text-4xl bg-black/50 text-gray-300 p-4 mb-6 w-full text-center rounded-lg shadow-lg">
           Online Sheets
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -152,7 +149,7 @@ const Characters: React.FC = () => {
               </Link>
             </div>
           ))}
-        </div>
+        </div> */}
 
         <h1 className="text-4xl bg-black/50 text-gray-300 p-4 mt-8 mb-6 w-full text-center rounded-lg shadow-lg">
           Offline Sheets
